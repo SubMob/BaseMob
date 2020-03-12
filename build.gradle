@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+apply from: '../dependencies.gradle'
+apply from: '../version.gradle'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode appVersionCode
+        versionName "1.${appVersionCode}"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"}
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation (
+            Kotlin,
+            Moshi,
+            Dagger,
+            Coroutines,
+            RecyclerView,
+            RxKotlin.values(),
+            Retrofit.retrofit,
+            Retrofit.moshiConverter,
+            Retrofit.rxjava2,
+            LifeCycle.lifeCycleExtensions
+    )
+
+    api(RxApis.java)
+
+    testImplementation JUnit
+}
