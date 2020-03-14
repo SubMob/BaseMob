@@ -2,8 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
-apply from: '../dependencies.gradle'
-apply from: '../version.gradle'
+apply from: 'basemobConf.gradle'
 
 android {
     compileSdkVersion 29
@@ -16,9 +15,9 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode appVersionCode
-        versionName "1.${appVersionCode}"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"}
+        versionCode gitVersion
+        versionName "1.${gitVersion}"
+    }
 
     buildTypes {
         release {
@@ -34,22 +33,18 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-
-    implementation (
-            Kotlin,
-            Moshi,
-            Dagger,
-            Coroutines,
-            RecyclerView,
-            RxKotlin.values(),
-            Retrofit.retrofit,
-            Retrofit.moshiConverter,
-            Retrofit.rxjava2,
-            LifeCycle.lifeCycleExtensions
+    implementation(
+            kotlin,
+            moshi,
+            dagger,
+            coroutines,
+            recyclerView,
+            lifeCycle,
+            rxKotlin.values(),
+            retrofit.values(),
     )
 
-    api(RxApis.java)
+    api(rxApis)
 
-    testImplementation JUnit
+    testImplementation jUnit
 }
