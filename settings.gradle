@@ -1,0 +1,2 @@
+include ':submob'
+rootProject.name = "basemob"
