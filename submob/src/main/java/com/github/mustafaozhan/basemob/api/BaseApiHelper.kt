@@ -1,4 +1,4 @@
-package mustafaozhan.github.com.basemob.api
+package com.github.mustafaozhan.basemob.api
 
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient

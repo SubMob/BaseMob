@@ -1,4 +1,4 @@
-package mustafaozhan.github.com.basemob.adapter
+package com.github.mustafaozhan.basemob.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding

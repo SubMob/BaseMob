@@ -1,13 +1,13 @@
-package mustafaozhan.github.com.basemob.api
+package com.github.mustafaozhan.basemob.api
 
+import com.github.mustafaozhan.basemob.error.ModelMappingException
+import com.github.mustafaozhan.basemob.error.NetworkException
+import com.github.mustafaozhan.basemob.error.RetrofitException
+import com.github.mustafaozhan.basemob.error.UnknownNetworkException
 import com.squareup.moshi.JsonDataException
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import mustafaozhan.github.com.basemob.error.ModelMappingException
-import mustafaozhan.github.com.basemob.error.NetworkException
-import mustafaozhan.github.com.basemob.error.RetrofitException
-import mustafaozhan.github.com.basemob.error.UnknownNetworkException
 import retrofit2.HttpException
 import java.io.IOException
 import java.net.UnknownHostException

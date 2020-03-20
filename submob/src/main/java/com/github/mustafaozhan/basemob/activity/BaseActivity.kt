@@ -1,4 +1,4 @@
-package mustafaozhan.github.com.basemob.activity
+package com.github.mustafaozhan.basemob.activity
 
 import android.os.Bundle
 import androidx.annotation.IdRes

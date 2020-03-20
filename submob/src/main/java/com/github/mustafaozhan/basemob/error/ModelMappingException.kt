@@ -1,3 +1,3 @@
-package mustafaozhan.github.com.basemob.error
+package com.github.mustafaozhan.basemob.error
 
 class ModelMappingException(cause: Throwable) : NetworkException(cause)

@@ -1,4 +1,4 @@
-package mustafaozhan.github.com.basemob.fragment
+package com.github.mustafaozhan.basemob.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

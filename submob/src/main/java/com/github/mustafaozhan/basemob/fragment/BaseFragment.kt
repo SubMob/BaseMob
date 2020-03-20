@@ -1,11 +1,11 @@
-package mustafaozhan.github.com.basemob.fragment
+package com.github.mustafaozhan.basemob.fragment
 
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.github.mustafaozhan.basemob.activity.BaseActivity
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.disposables.CompositeDisposable
-import mustafaozhan.github.com.basemob.activity.BaseActivity
 
 /**
  * Created by Mustafa Ozhan on 7/10/18 at 9:38 PM on Arch Linux wit Love <3.

@@ -1,4 +1,4 @@
-package mustafaozhan.github.com.basemob.error
+package com.github.mustafaozhan.basemob.error
 
 import retrofit2.Response
 

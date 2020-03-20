@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package mustafaozhan.github.com.basemob.extension
+package com.github.mustafaozhan.basemob.extension
 
 import io.reactivex.Completable
 import io.reactivex.Flowable

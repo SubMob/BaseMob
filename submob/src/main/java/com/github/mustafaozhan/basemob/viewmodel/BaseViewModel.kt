@@ -1,9 +1,9 @@
-package mustafaozhan.github.com.basemob.viewmodel
+package com.github.mustafaozhan.basemob.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.github.mustafaozhan.basemob.extension.applySchedulers
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
-import mustafaozhan.github.com.basemob.extension.applySchedulers
 
 /**
  * Created by Mustafa Ozhan on 7/10/18 at 9:40 PM on Arch Linux wit Love <3.

@@ -1,4 +1,4 @@
-package mustafaozhan.github.com.basemob.preferences
+package com.github.mustafaozhan.basemob.preferences
 
 import android.content.Context
 import com.squareup.moshi.Moshi
