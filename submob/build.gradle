@@ -40,11 +40,9 @@ dependencies {
             coroutines,
             recyclerView,
             lifeCycle,
-            rxKotlin.values(),
+            rxAndroid,
             retrofit.values(),
     )
-
-    api(rxApis)
 
     testImplementation jUnit
 }
