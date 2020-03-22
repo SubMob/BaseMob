@@ -3,7 +3,6 @@ package com.github.mustafaozhan.basemob.activity
 import android.os.Bundle
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
@@ -20,14 +19,11 @@ abstract class BaseActivity : AppCompatActivity() {
     @IdRes
     protected var containerId: Int = R.id.content
 
-    protected lateinit var navigationController: NavController
-
     protected val compositeDisposable by lazy { CompositeDisposable() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
-        navigationController = findNavController(containerId)
     }
 
     protected fun setHomeAsUpEnabled(enabled: Boolean) =
@@ -40,13 +36,13 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     protected fun navigate(navDirections: NavDirections) =
-        navigationController.navigate(
+        findNavController(containerId).navigate(
             navDirections, NavOptions.Builder()
-                .setLaunchSingleTop(true)
-                .setEnterAnim(R.anim.enter_from_right)
-                .setExitAnim(R.anim.exit_to_left)
-                .setPopEnterAnim(R.anim.enter_from_left)
-                .setPopExitAnim(R.anim.exit_to_right)
-                .build()
+            .setLaunchSingleTop(true)
+            .setEnterAnim(R.anim.enter_from_right)
+            .setExitAnim(R.anim.exit_to_left)
+            .setPopEnterAnim(R.anim.enter_from_left)
+            .setPopExitAnim(R.anim.exit_to_right)
+            .build()
         )
 }
