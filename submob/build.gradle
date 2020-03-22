@@ -41,6 +41,7 @@ dependencies {
             recyclerView,
             lifeCycle,
             rxAndroid,
+            navigation,
             retrofit.values(),
     )
 

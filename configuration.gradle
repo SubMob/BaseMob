@@ -13,6 +13,7 @@ def RX_ANDROID_VERSION = '2.1.1'
 def RETROFIT_VERSION = '2.4.0'
 def LIFE_CYCLE_VERSION = '2.2.0'
 def JUNIT_VERSION = '4.13'
+def NAVIGATION_VERSION = '2.2.1'
 
 def getGitVersion = { ->
     try {
@@ -40,6 +41,7 @@ ext {
     recyclerView = "androidx.recyclerview:recyclerview:$RECYCLER_VIEW_VERSION"
     lifeCycle = "androidx.lifecycle:lifecycle-extensions:$LIFE_CYCLE_VERSION"
     rxAndroid = "io.reactivex.rxjava2:rxandroid:$RX_ANDROID_VERSION"
+    navigation = "androidx.navigation:navigation-fragment-ktx:$NAVIGATION_VERSION"
 
     retrofit = [
             retrofit      : "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION",
@@ -53,6 +55,6 @@ ext {
     // Classpath
     classpaths = [
             androidBuildTools : "com.android.tools.build:gradle:${ANDROID_PLUGIN_VERSION}",
-            kotlinGradlePlugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:${KOTLIN_VERSION}",
+            kotlinGradlePlugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:${KOTLIN_VERSION}"
     ]
 }
