@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseViewBindingFragment<TViewBinding : ViewBinding> : BaseFragment() {
+abstract class BaseVBFragment<TViewBinding : ViewBinding> : BaseFragment() {
 
     protected lateinit var binding: TViewBinding
 

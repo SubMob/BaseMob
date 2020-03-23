@@ -3,7 +3,7 @@ package com.github.mustafaozhan.basemob.activity
 import android.os.Bundle
 import androidx.databinding.ViewDataBinding
 
-abstract class BaseDataBindingActivity<TDataBinding : ViewDataBinding> : BaseActivity() {
+abstract class BaseDBActivity<TDataBinding : ViewDataBinding> : BaseActivity() {
 
     protected lateinit var binding: TDataBinding
     abstract fun bind(): TDataBinding

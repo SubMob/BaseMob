@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 
-abstract class BaseDataBindingFragment<TDataBinding : ViewDataBinding> : BaseFragment() {
+abstract class BaseDBFragment<TDataBinding : ViewDataBinding> : BaseFragment() {
 
     protected lateinit var binding: TDataBinding
 

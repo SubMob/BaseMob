@@ -1,14 +1,16 @@
-package com.github.mustafaozhan.basemob.adapter
+package com.github.mustafaozhan.basemob.recyclerview.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
+import com.github.mustafaozhan.basemob.recyclerview.AutoUpdatableAdapter
+import com.github.mustafaozhan.basemob.recyclerview.viewholder.BaseVBViewHolder
 import kotlin.properties.Delegates
 
 /**
  * Created by Mustafa Ozhan on 2018-07-12.
  */
-abstract class BaseRecyclerViewAdapter<T, TViewBinding : ViewBinding> :
-    RecyclerView.Adapter<BaseViewHolder<T, TViewBinding>>(),
+abstract class BaseVBRecyclerViewAdapter<T, TViewBinding : ViewBinding> :
+    RecyclerView.Adapter<BaseVBViewHolder<T, TViewBinding>>(),
     AutoUpdatableAdapter {
 
     private var list: MutableList<T> by Delegates.observable(mutableListOf()) { _, old, new ->
@@ -19,7 +21,7 @@ abstract class BaseRecyclerViewAdapter<T, TViewBinding : ViewBinding> :
     lateinit var onItemLongClickListener: ((T, TViewBinding) -> Boolean)
 
     override fun onBindViewHolder(
-        holder: BaseViewHolder<T, TViewBinding>,
+        holder: BaseVBViewHolder<T, TViewBinding>,
         position: Int
     ) = with(holder) {
         bindItem(list[position])

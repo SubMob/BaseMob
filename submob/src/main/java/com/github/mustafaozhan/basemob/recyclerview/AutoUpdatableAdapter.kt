@@ -1,4 +1,4 @@
-package com.github.mustafaozhan.basemob.adapter
+package com.github.mustafaozhan.basemob.recyclerview
 
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView

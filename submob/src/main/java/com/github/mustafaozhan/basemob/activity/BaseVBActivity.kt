@@ -3,7 +3,7 @@ package com.github.mustafaozhan.basemob.activity
 import android.os.Bundle
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseViewBindingActivity<TViewBinding : ViewBinding> : BaseActivity() {
+abstract class BaseVBActivity<TViewBinding : ViewBinding> : BaseActivity() {
 
     protected lateinit var binding: TViewBinding
 
