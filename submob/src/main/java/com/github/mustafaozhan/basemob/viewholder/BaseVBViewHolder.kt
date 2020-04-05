@@ -1,4 +1,4 @@
-package com.github.mustafaozhan.basemob.recyclerview.viewholder
+package com.github.mustafaozhan.basemob.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
