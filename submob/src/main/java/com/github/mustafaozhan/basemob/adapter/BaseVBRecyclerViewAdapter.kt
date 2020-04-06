@@ -15,6 +15,6 @@ abstract class BaseVBRecyclerViewAdapter<T, TViewBinding : ViewBinding>(
         holder: BaseVBViewHolder<T, TViewBinding>,
         position: Int
     ) = with(holder) {
-        bindItem(getItem(position))
+        onItemBind(getItem(position))
     }
 }

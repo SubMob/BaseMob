@@ -10,5 +10,5 @@ abstract class BaseVBViewHolder<out T, TViewBinding : ViewBinding>(
     protected val itemBinding: TViewBinding
 ) : RecyclerView.ViewHolder(itemBinding.root) {
 
-    abstract fun bindItem(item: @UnsafeVariance T)
+    abstract fun onItemBind(item: @UnsafeVariance T)
 }
