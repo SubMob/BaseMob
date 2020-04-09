@@ -3,8 +3,8 @@ repositories {
     google()
 }
 
-def ANDROID_PLUGIN_VERSION = '4.0.0-beta03'
-def KOTLIN_VERSION = '1.3.70'
+def ANDROID_PLUGIN_VERSION = '4.0.0-beta04'
+def KOTLIN_VERSION = '1.3.71'
 def MOSHI_VERSION = '1.9.2'
 def DAGGER_VERSION = '2.27'
 def COROUTINES_VERSION = '1.3.0'
