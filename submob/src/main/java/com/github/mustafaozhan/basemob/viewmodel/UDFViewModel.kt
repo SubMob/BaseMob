@@ -9,6 +9,6 @@ abstract class UDFViewModel
 <ViewEffect : BaseViewEffect, ViewEvent : BaseViewEvent, ViewState : BaseViewState> :
     BaseViewModel() {
     abstract val viewEffectLiveData: MutableLiveData<ViewEffect>
-    abstract val viewStateLiveData: MutableLiveData<ViewState>
+    abstract val viewState: ViewState
     abstract fun getViewEvent(): ViewEvent
 }
