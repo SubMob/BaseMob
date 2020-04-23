@@ -9,8 +9,8 @@ import com.github.mustafaozhan.basemob.model.BaseYield
 abstract class EASYViewModel
 <State : BaseState, Action : BaseAction, Event : BaseEvent, Yield : BaseYield> :
     BaseViewModel() {
-    abstract val state: State
-    abstract val event: LiveData<Event>
-    abstract val action: Action
-    abstract val yield: Yield
+    abstract val states: State
+    abstract val events: LiveData<Event>
+    abstract fun getActions(): Action
+    abstract val yields: Yield
 }
