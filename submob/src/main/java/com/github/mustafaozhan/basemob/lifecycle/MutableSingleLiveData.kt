@@ -1,4 +1,4 @@
-package com.github.mustafaozhan.basemob.util
+package com.github.mustafaozhan.basemob.lifecycle
 
 import androidx.annotation.MainThread
 

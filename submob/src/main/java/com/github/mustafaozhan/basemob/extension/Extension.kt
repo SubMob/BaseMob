@@ -5,7 +5,7 @@ package com.github.mustafaozhan.basemob.extension
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import com.github.mustafaozhan.basemob.util.SingleLiveData
+import com.github.mustafaozhan.basemob.lifecycle.SingleLiveData
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Observable
