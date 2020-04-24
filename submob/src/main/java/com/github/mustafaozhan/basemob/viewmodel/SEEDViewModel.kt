@@ -11,6 +11,6 @@ abstract class SEEDViewModel
     BaseViewModel() {
     abstract val state: State
     abstract val effect: SingleLiveData<Effect>
-    abstract val event: Event
     abstract val data: Data
+    abstract fun getEvent(): Event
 }
