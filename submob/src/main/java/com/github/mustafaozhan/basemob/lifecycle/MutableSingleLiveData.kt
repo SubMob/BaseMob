@@ -5,7 +5,6 @@ import androidx.annotation.MainThread
 @Suppress("RedundantOverride")
 class MutableSingleLiveData<T> : SingleLiveData<T>() {
 
-    @MainThread
     public override fun postValue(value: T) {
         super.postValue(value)
     }
