@@ -1,3 +1,4 @@
+// Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
 package com.github.mustafaozhan.basemob.activity
 
 import android.os.Bundle
@@ -10,9 +11,6 @@ import com.github.mustafaozhan.basemob.R
 import dagger.android.AndroidInjection
 import io.reactivex.disposables.CompositeDisposable
 
-/**
- * Created by Mustafa Ozhan on 7/10/18 at 9:37 PM on Arch Linux wit Love <3.
- */
 @Suppress("unused")
 abstract class BaseActivity : AppCompatActivity() {
 

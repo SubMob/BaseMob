@@ -1,3 +1,4 @@
+// Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
 package com.github.mustafaozhan.basemob.lifecycle
 
 import androidx.annotation.MainThread

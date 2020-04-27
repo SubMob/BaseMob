@@ -1,3 +1,4 @@
+// Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
 package com.github.mustafaozhan.basemob.error
 
 import retrofit2.Response

@@ -1,3 +1,4 @@
+// Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
 package com.github.mustafaozhan.basemob.viewmodel
 
 import com.github.mustafaozhan.basemob.lifecycle.SingleLiveData

@@ -1,11 +1,9 @@
+// Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
 package com.github.mustafaozhan.basemob.preferences
 
 import android.content.Context
 import com.squareup.moshi.Moshi
 
-/**
- * Created by Mustafa Ozhan on 7/10/18 at 9:42 PM on Arch Linux wit Love <3.
- */
 @Suppress("SameParameterValue")
 abstract class BasePreferences(val context: Context) {
 

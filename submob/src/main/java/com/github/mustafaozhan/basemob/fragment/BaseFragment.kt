@@ -1,3 +1,4 @@
+// Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
 package com.github.mustafaozhan.basemob.fragment
 
 import android.content.Context
@@ -11,9 +12,6 @@ import com.github.mustafaozhan.basemob.activity.BaseActivity
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.disposables.CompositeDisposable
 
-/**
- * Created by Mustafa Ozhan on 7/10/18 at 9:38 PM on Arch Linux wit Love <3.
- */
 @Suppress("unused")
 abstract class BaseFragment : Fragment() {
 
@@ -42,11 +40,11 @@ abstract class BaseFragment : Fragment() {
     protected fun navigate(navDirections: NavDirections) = findNavController()
         .navigate(
             navDirections, NavOptions.Builder()
-                .setLaunchSingleTop(true)
-                .setEnterAnim(R.anim.enter_from_right)
-                .setExitAnim(R.anim.exit_to_left)
-                .setPopEnterAnim(R.anim.enter_from_left)
-                .setPopExitAnim(R.anim.exit_to_right)
-                .build()
+            .setLaunchSingleTop(true)
+            .setEnterAnim(R.anim.enter_from_right)
+            .setExitAnim(R.anim.exit_to_left)
+            .setPopEnterAnim(R.anim.enter_from_left)
+            .setPopExitAnim(R.anim.exit_to_right)
+            .build()
         )
 }

@@ -1,3 +1,4 @@
+// Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
 package com.github.mustafaozhan.basemob.viewmodel
 
 import androidx.lifecycle.ViewModel
@@ -5,9 +6,6 @@ import com.github.mustafaozhan.basemob.extension.applySchedulers
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 
-/**
- * Created by Mustafa Ozhan on 7/10/18 at 9:40 PM on Arch Linux wit Love <3.
- */
 abstract class BaseViewModel : ViewModel() {
 
     private val compositeDisposable by lazy { CompositeDisposable() }
