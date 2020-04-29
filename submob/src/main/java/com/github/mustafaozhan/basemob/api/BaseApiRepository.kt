@@ -34,13 +34,11 @@ abstract class BaseApiRepository {
                     is IOException,
                     is SSLException -> throw NetworkException(e)
                     is JsonDataException -> throw ModelMappingException(e)
-                    is HttpException -> {
-                        val message = e.response().code().toString() + " " + e.response().message()
-                        val url = ""
-                        //    e.response().raw().request.url.toString()
-                        // todo need to pass url here
-                        throw RetrofitException(message, url, e.response(), e)
-                    }
+                    is HttpException -> throw RetrofitException(
+                        e.response().code().toString() + " " + e.response().message(),
+                        e.response(),
+                        e
+                    )
                     else -> throw UnknownNetworkException(e)
                 }
             }
