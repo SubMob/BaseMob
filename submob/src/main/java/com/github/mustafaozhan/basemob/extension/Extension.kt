@@ -1,4 +1,6 @@
-// Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
+/*
+ Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
+ */
 @file:Suppress("unused")
 
 package com.github.mustafaozhan.basemob.extension
