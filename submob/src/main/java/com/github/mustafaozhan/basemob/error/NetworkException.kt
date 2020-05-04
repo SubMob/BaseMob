@@ -9,4 +9,6 @@ class UnknownNetworkException(cause: Throwable) : NetworkException(cause)
 
 class ModelMappingException(cause: Throwable) : NetworkException(cause)
 
+class InternetConnectionException(cause: Throwable) : NetworkException(cause)
+
 class EmptyParameterException : NetworkException(Exception("parameter can not be empty"))

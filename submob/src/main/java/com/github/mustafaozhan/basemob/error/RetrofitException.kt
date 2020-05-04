@@ -8,6 +8,6 @@ import retrofit2.Response
 @Suppress("UNUSED_PARAMETER", "unused")
 class RetrofitException(
     override val message: String?,
-    val response: Response<*>,
+    val response: Response<*>?,
     override val cause: Throwable
 ) : Throwable(cause)
