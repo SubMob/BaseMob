@@ -16,6 +16,7 @@ def RETROFIT_VERSION = '2.8.1'
 def LIFE_CYCLE_VERSION = '2.2.0'
 def JUNIT_VERSION = '4.13'
 def NAVIGATION_VERSION = '2.2.2'
+def ANDROID_MATERIAL_VERSION = '1.1.0'
 
 def getGitVersion = { ->
     try {
@@ -43,6 +44,7 @@ ext {
     recyclerView = "androidx.recyclerview:recyclerview:$RECYCLER_VIEW_VERSION"
     lifeCycle = "androidx.lifecycle:lifecycle-extensions:$LIFE_CYCLE_VERSION"
     navigation = "androidx.navigation:navigation-fragment-ktx:$NAVIGATION_VERSION"
+    androidMaterial = "com.google.android.material:material:$ANDROID_MATERIAL_VERSION"
 
     retrofit = [
             retrofit      : "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION",
