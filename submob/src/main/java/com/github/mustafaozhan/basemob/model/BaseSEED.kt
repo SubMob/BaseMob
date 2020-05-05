@@ -3,4 +3,10 @@
  */
 package com.github.mustafaozhan.basemob.model
 
+open class BaseState
+
+interface BaseEvent
+
+open class BaseEffect
+
 open class BaseData
