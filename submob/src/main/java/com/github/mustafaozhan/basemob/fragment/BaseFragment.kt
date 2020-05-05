@@ -12,12 +12,9 @@ import androidx.navigation.fragment.findNavController
 import com.github.mustafaozhan.basemob.R
 import com.github.mustafaozhan.basemob.activity.BaseActivity
 import dagger.android.support.AndroidSupportInjection
-import io.reactivex.disposables.CompositeDisposable
 
 @Suppress("unused")
 abstract class BaseFragment : Fragment() {
-
-    protected val compositeDisposable by lazy { CompositeDisposable() }
 
     val fragmentTag: String = this.javaClass.simpleName
 
@@ -29,12 +26,6 @@ abstract class BaseFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-    }
-
-    override fun onDestroy() {
-        compositeDisposable.clear()
-        compositeDisposable.dispose()
-        super.onDestroy()
     }
 
     protected fun getBaseActivity() = activity as? BaseActivity

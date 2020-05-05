@@ -11,15 +11,12 @@ import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import com.github.mustafaozhan.basemob.R
 import dagger.android.AndroidInjection
-import io.reactivex.disposables.CompositeDisposable
 
 @Suppress("unused")
 abstract class BaseActivity : AppCompatActivity() {
 
     @IdRes
     protected var containerId: Int = R.id.content
-
-    protected val compositeDisposable by lazy { CompositeDisposable() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -28,12 +25,6 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected fun setHomeAsUpEnabled(enabled: Boolean) =
         supportActionBar?.setDisplayHomeAsUpEnabled(enabled)
-
-    override fun onDestroy() {
-        compositeDisposable.clear()
-        compositeDisposable.dispose()
-        super.onDestroy()
-    }
 
     protected fun navigate(navDirections: NavDirections) =
         findNavController(containerId).navigate(

@@ -43,7 +43,6 @@ dependencies {
             coroutines,
             recyclerView,
             lifeCycle,
-            rxAndroid,
             navigation,
             retrofit.values(),
     )
