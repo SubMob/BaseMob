@@ -9,7 +9,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import com.github.mustafaozhan.basemob.lifecycle.SingleLiveData
-import io.reactivex.Observable
+import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
@@ -23,6 +23,6 @@ fun <T> SingleLiveData<T>.reObserveSingle(owner: LifecycleOwner, observer: Obser
     observe(owner, observer)
 }
 
-fun <T> Observable<T>.applySchedulers(): Observable<T> =
+fun <T> Flowable<T>.applySchedulers(): Flowable<T> =
     observeOn(AndroidSchedulers.mainThread())
         .subscribeOn(Schedulers.io())
