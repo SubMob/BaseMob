@@ -9,6 +9,8 @@ import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.fragment.app.DialogFragment
+import androidx.navigation.NavDirections
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.github.mustafaozhan.basemob.R
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -26,7 +28,7 @@ abstract class BaseBottomSheetDialogFragment : AppCompatDialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(DialogFragment.STYLE_NO_FRAME, R.style.BottomSheetDialogStyle)
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.BottomSheetDialogStyle)
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -36,10 +38,18 @@ abstract class BaseBottomSheetDialogFragment : AppCompatDialogFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        bottomSheetDialog.behavior.state = BottomSheetBehavior.STATE_EXPANDED
+        bottomSheetDialog.behavior.state = BottomSheetBehavior.STATE_COLLAPSED
     }
 
-    fun dismissDialog() {
-        findNavController().navigateUp()
+    private fun dismissDialog() = findNavController().navigateUp()
+
+    protected fun navigate(navDirections: NavDirections) {
+        findNavController()
+            .navigate(
+                navDirections, NavOptions.Builder()
+                .setLaunchSingleTop(true)
+                .build()
+            )
+        dismissDialog()
     }
 }
