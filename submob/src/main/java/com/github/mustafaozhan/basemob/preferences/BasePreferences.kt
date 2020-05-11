@@ -4,6 +4,7 @@
 package com.github.mustafaozhan.basemob.preferences
 
 import android.content.Context
+import com.github.mustafaozhan.basemob.error.SharedPreferencesException
 import com.squareup.moshi.Moshi
 
 @Suppress("SameParameterValue")
@@ -15,20 +16,24 @@ abstract class BasePreferences(val context: Context) {
     private val preferences
         get() = context.getSharedPreferences(preferencesName, Context.MODE_PRIVATE)
 
-    private val editor
-        get() = preferences.edit()
+    @Suppress("UNCHECKED_CAST")
+    fun <T> getValue(key: String, defaultValue: T) = when (defaultValue) {
+        is Long -> preferences.getLong(key, defaultValue) as T
+        is String -> preferences.getString(key, defaultValue) as T
+        is Int -> preferences.getInt(key, defaultValue) as T
+        is Boolean -> preferences.getBoolean(key, defaultValue) as T
+        is Float -> preferences.getFloat(key, defaultValue) as? T
+        else -> throw SharedPreferencesException()
+    }
 
-    protected fun getStringEntry(key: String, defaultValue: String) = preferences
-        .getString(key, defaultValue) ?: defaultValue
-
-    protected fun setStringEntry(key: String, value: String) = editor
-        .putString(key, value)
-        .commit()
-
-    protected fun setBooleanEntry(key: String, value: Boolean) = editor
-        .putBoolean(key, value)
-        .commit()
-
-    protected fun getBooleanEntry(key: String, defaultValue: Boolean = false) = preferences
-        .getBoolean(key, defaultValue)
+    fun <T> setValue(key: String, value: T) = with(preferences.edit()) {
+        when (value) {
+            is Long -> putLong(key, value)
+            is String -> putString(key, value)
+            is Int -> putInt(key, value)
+            is Boolean -> putBoolean(key, value)
+            is Float -> putFloat(key, value)
+            else -> throw SharedPreferencesException()
+        }.apply()
+    }
 }
