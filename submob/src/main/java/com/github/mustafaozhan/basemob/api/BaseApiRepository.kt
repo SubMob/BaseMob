@@ -19,11 +19,11 @@ import java.net.UnknownHostException
 import java.util.concurrent.TimeoutException
 import javax.net.ssl.SSLException
 
-@Suppress("ThrowsCount", "TooGenericExceptionCaught")
 abstract class BaseApiRepository {
 
     abstract val apiHelper: BaseApiHelper
 
+    @Suppress("ThrowsCount", "TooGenericExceptionCaught")
     suspend fun <T> apiRequest(suspendBlock: suspend () -> T) =
         withContext(Dispatchers.IO) {
             try {
