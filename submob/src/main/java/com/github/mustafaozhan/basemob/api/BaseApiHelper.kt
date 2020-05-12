@@ -11,12 +11,12 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 abstract class BaseApiHelper {
 
-    protected abstract val moshi: Moshi
+    protected abstract val endpoint: String
 
-    protected fun initRxRetrofit(endpoint: String, httpClient: OkHttpClient): Retrofit {
+    protected fun initRxRetrofit(httpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl(endpoint)
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .addConverterFactory(MoshiConverterFactory.create(Moshi.Builder().build()))
             .client(httpClient)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()

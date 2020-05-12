@@ -3,7 +3,10 @@
  */
 package com.github.mustafaozhan.basemob.preferences
 
+import com.squareup.moshi.Moshi
+
 abstract class BasePreferencesRepository {
-    abstract val preferencesHelper: BasePreferencesHelper
+    protected abstract val preferencesHelper: BasePreferencesHelper
+    protected abstract val moshi: Moshi
 }
 

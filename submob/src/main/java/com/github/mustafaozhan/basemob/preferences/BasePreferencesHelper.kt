@@ -5,12 +5,10 @@ package com.github.mustafaozhan.basemob.preferences
 
 import android.content.Context
 import com.github.mustafaozhan.basemob.error.SharedPreferencesException
-import com.squareup.moshi.Moshi
 
 abstract class BasePreferencesHelper(val context: Context) {
 
     protected abstract val preferencesName: String
-    protected abstract val moshi: Moshi
 
     private val preferences
         get() = context.getSharedPreferences(preferencesName, Context.MODE_PRIVATE)
