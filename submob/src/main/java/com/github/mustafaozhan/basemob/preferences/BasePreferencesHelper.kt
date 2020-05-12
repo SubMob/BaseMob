@@ -7,8 +7,7 @@ import android.content.Context
 import com.github.mustafaozhan.basemob.error.SharedPreferencesException
 import com.squareup.moshi.Moshi
 
-@Suppress("SameParameterValue")
-abstract class BasePreferences(val context: Context) {
+abstract class BasePreferencesHelper(val context: Context) {
 
     protected abstract val preferencesName: String
     protected abstract val moshi: Moshi
