@@ -46,6 +46,7 @@ dependencies {
             lifeCycle,
             navigation,
             androidMaterial,
+            okHttp,
             retrofit.values(),
     )
 
