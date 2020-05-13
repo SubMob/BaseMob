@@ -9,11 +9,11 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-abstract class BaseApiHelper {
+abstract class BaseApiFactory {
 
     protected abstract val endpoint: String
 
-    protected fun initRxRetrofit(httpClient: OkHttpClient): Retrofit {
+    protected fun createRetrofit(httpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl(endpoint)
             .addConverterFactory(MoshiConverterFactory.create(Moshi.Builder().build()))

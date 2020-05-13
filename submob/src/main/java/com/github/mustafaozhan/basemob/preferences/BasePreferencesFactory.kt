@@ -6,7 +6,7 @@ package com.github.mustafaozhan.basemob.preferences
 import android.content.Context
 import com.github.mustafaozhan.basemob.error.SharedPreferencesException
 
-abstract class BasePreferencesHelper(val context: Context) {
+abstract class BasePreferencesFactory(val context: Context) {
 
     protected abstract val preferencesName: String
 

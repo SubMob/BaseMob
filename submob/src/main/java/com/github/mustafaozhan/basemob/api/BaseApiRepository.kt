@@ -21,7 +21,7 @@ import javax.net.ssl.SSLException
 
 abstract class BaseApiRepository {
 
-    abstract val apiHelper: BaseApiHelper
+    abstract val apiFactory: BaseApiFactory
 
     @Suppress("ThrowsCount", "TooGenericExceptionCaught")
     suspend fun <T> apiRequest(suspendBlock: suspend () -> T) =
