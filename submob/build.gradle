@@ -40,7 +40,6 @@ dependencies {
             kotlin,
             moshi,
             dagger,
-            rxAndroid,
             coroutines,
             recyclerView,
             lifeCycle,

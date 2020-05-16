@@ -8,6 +8,7 @@ import com.github.mustafaozhan.basemob.error.ModelMappingException
 import com.github.mustafaozhan.basemob.error.NetworkException
 import com.github.mustafaozhan.basemob.error.RetrofitException
 import com.github.mustafaozhan.basemob.error.UnknownNetworkException
+import com.github.mustafaozhan.basemob.model.Result
 import com.squareup.moshi.JsonDataException
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
@@ -27,23 +28,25 @@ abstract class BaseApiRepository {
     suspend fun <T> apiRequest(suspendBlock: suspend () -> T) =
         withContext(Dispatchers.IO) {
             try {
-                suspendBlock.invoke()
+                Result.Success(suspendBlock.invoke())
             } catch (e: Throwable) {
-                when (e) {
-                    is CancellationException -> throw e
-                    is UnknownHostException,
-                    is TimeoutException,
-                    is IOException,
-                    is SSLException -> throw NetworkException(e)
-                    is ConnectException -> throw InternetConnectionException(e)
-                    is JsonDataException -> throw ModelMappingException(e)
-                    is HttpException -> throw RetrofitException(
-                        e.response()?.code().toString() + " " + e.response()?.message(),
-                        e.response(),
-                        e
-                    )
-                    else -> throw UnknownNetworkException(e)
-                }
+                Result.Error(
+                    when (e) {
+                        is CancellationException -> e
+                        is UnknownHostException,
+                        is TimeoutException,
+                        is IOException,
+                        is SSLException -> NetworkException(e)
+                        is ConnectException -> InternetConnectionException(e)
+                        is JsonDataException -> ModelMappingException(e)
+                        is HttpException -> RetrofitException(
+                            e.response()?.code().toString() + " " + e.response()?.message(),
+                            e.response(),
+                            e
+                        )
+                        else -> UnknownNetworkException(e)
+                    }
+                )
             }
         }
 }
