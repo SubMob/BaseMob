@@ -30,14 +30,20 @@ abstract class BaseFragment : Fragment() {
 
     protected fun getBaseActivity() = activity as? BaseActivity
 
-    protected fun navigate(navDirections: NavDirections) = findNavController()
-        .navigate(
-            navDirections, NavOptions.Builder()
-            .setLaunchSingleTop(true)
-            .setEnterAnim(R.anim.enter_from_right)
-            .setExitAnim(R.anim.exit_to_left)
-            .setPopEnterAnim(R.anim.enter_from_left)
-            .setPopExitAnim(R.anim.exit_to_right)
-            .build()
-        )
+    protected fun navigate(
+        currentDestinationId: Int,
+        navDirections: NavDirections
+    ) = findNavController().let {
+        if (it.currentDestination?.id == currentDestinationId) {
+            it.navigate(
+                navDirections, NavOptions.Builder()
+                .setLaunchSingleTop(true)
+                .setEnterAnim(R.anim.enter_from_right)
+                .setExitAnim(R.anim.exit_to_left)
+                .setPopEnterAnim(R.anim.enter_from_left)
+                .setPopExitAnim(R.anim.exit_to_right)
+                .build()
+            )
+        }
+    }
 }
