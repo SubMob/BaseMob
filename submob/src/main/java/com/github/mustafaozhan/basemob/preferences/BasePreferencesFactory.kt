@@ -4,6 +4,7 @@
 package com.github.mustafaozhan.basemob.preferences
 
 import android.content.Context
+import androidx.core.content.edit
 import com.github.mustafaozhan.basemob.error.SharedPreferencesException
 
 abstract class BasePreferencesFactory(val context: Context) {
@@ -26,7 +27,7 @@ abstract class BasePreferencesFactory(val context: Context) {
     }
 
     @Suppress("UNCHECKED_CAST")
-    fun <T> setValue(key: String, value: T) = with(preferences.edit()) {
+    fun <T> setValue(key: String, value: T) = preferences.edit {
         when (value) {
             is Long -> putLong(key, value)
             is String -> putString(key, value)
@@ -36,6 +37,6 @@ abstract class BasePreferencesFactory(val context: Context) {
             is Set<*> -> putStringSet(key, value as Set<String>)
             is MutableSet<*> -> putStringSet(key, value as MutableSet<String>)
             else -> throw SharedPreferencesException()
-        }.apply()
+        }
     }
 }
