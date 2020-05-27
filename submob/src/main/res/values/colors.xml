@@ -3,5 +3,6 @@
   -->
 <resources>
     <color name="colorPrimaryBlack">#171E22</color>
+    <color name="colorPrimarySemiDark">#37474F</color>
     <color name="cyan_700">#0097A7</color>
 </resources>
