@@ -6,13 +6,14 @@ package com.github.mustafaozhan.basemob.util
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
+import android.view.Gravity
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.github.mustafaozhan.basemob.R
 
 object Toast {
-    private const val iconPadding = 10
+    private const val imagePadding = 24
 
     @Suppress("ObjectPropertyName")
     private var _toast: Toast? = null
@@ -36,8 +37,9 @@ object Toast {
                 (background as? GradientDrawable)?.setColor(ContextCompat.getColor(context, it))
                 findViewById<TextView>(android.R.id.message)?.apply {
                     setTextColor(textColor)
+                    gravity = Gravity.CENTER
                     setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_info, 0, 0, 0)
-                    compoundDrawablePadding = iconPadding
+                    compoundDrawablePadding = imagePadding
                 }
             }
         }
@@ -63,8 +65,9 @@ object Toast {
                 (background as? GradientDrawable)?.setColor(ContextCompat.getColor(context, it))
                 findViewById<TextView>(android.R.id.message)?.apply {
                     setTextColor(textColor)
+                    gravity = Gravity.CENTER
                     setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_info, 0, 0, 0)
-                    compoundDrawablePadding = iconPadding
+                    compoundDrawablePadding = imagePadding
                 }
             }
         }

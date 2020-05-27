@@ -4,11 +4,14 @@
 package com.github.mustafaozhan.basemob.util
 
 import android.graphics.Typeface
+import android.view.Gravity
 import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.github.mustafaozhan.basemob.R
 import com.google.android.material.snackbar.Snackbar
+
+private const val IMAGE_PADDING = 24
 
 @Suppress("LongParameterList")
 fun showSnack(
@@ -26,8 +29,12 @@ fun showSnack(
     setAction(actionText?.let { context.getString(it) } ?: "") { action?.invoke() }
     this.view.apply {
         setBackgroundColor(ContextCompat.getColor(context, R.color.snack_bar_background_color))
-        findViewById<TextView>(R.id.snackbar_text)
-            ?.setCompoundDrawablesWithIntrinsicBounds(icon ?: R.mipmap.ic_launcher, 0, 0, 0)
+        findViewById<TextView>(R.id.snackbar_text)?.apply {
+            gravity = Gravity.CENTER
+            setCompoundDrawablesWithIntrinsicBounds(icon ?: R.mipmap.ic_launcher, 0, 0, 0)
+            compoundDrawablePadding = IMAGE_PADDING
+
+        }
         findViewById<TextView>(R.id.snackbar_action)?.apply {
             setTypeface(null, Typeface.BOLD)
             setTextColor(ContextCompat.getColor(context, R.color.snack_bar_action_text_color))
@@ -51,9 +58,12 @@ fun showSnack(
     setAction(actionText) { action?.invoke() }
     this.view.apply {
         setBackgroundColor(ContextCompat.getColor(context, R.color.snack_bar_background_color))
-        findViewById<TextView>(R.id.snackbar_text)
-            .setCompoundDrawablesWithIntrinsicBounds(icon ?: R.mipmap.ic_launcher, 0, 0, 0)
-        findViewById<TextView>(R.id.snackbar_action).apply {
+        findViewById<TextView>(R.id.snackbar_text)?.apply {
+            gravity = Gravity.CENTER
+            setCompoundDrawablesWithIntrinsicBounds(icon ?: R.mipmap.ic_launcher, 0, 0, 0)
+            compoundDrawablePadding = IMAGE_PADDING
+        }
+        findViewById<TextView>(R.id.snackbar_action)?.apply {
             setTypeface(null, Typeface.BOLD)
             setTextColor(ContextCompat.getColor(context, R.color.snack_bar_action_text_color))
         }
