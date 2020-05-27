@@ -12,13 +12,11 @@ def MOSHI_VERSION = '1.9.2'
 def DAGGER_VERSION = '2.27'
 def COROUTINES_VERSION = '1.3.0'
 def RECYCLER_VIEW_VERSION = '1.1.0'
-def RETROFIT_VERSION = '2.6.4'
-def OK_HTTP_VERSION = '3.12.11'
+def RETROFIT_VERSION = '2.8.1'
+def OK_HTTP_VERSION = '4.6.0'
 def LIFE_CYCLE_VERSION = '2.2.0'
-def JUNIT_VERSION = '4.13'
 def NAVIGATION_VERSION = '2.2.2'
 def ANDROID_MATERIAL_VERSION = '1.1.0'
-def RX_ANDROID_VERSION = '2.1.1'
 
 def getGitVersion = { ->
     try {
@@ -41,7 +39,6 @@ ext {
     // Dependencies
     kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
     moshi = "com.squareup.moshi:moshi:$MOSHI_VERSION"
-    rxAndroid = "io.reactivex.rxjava2:rxandroid:$RX_ANDROID_VERSION"
     dagger = "com.google.dagger:dagger-android-support:$DAGGER_VERSION"
     coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$COROUTINES_VERSION"
     recyclerView = "androidx.recyclerview:recyclerview:$RECYCLER_VIEW_VERSION"
@@ -53,12 +50,8 @@ ext {
     retrofit = [
             retrofit      : "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION",
             moshiConverter: "com.squareup.retrofit2:converter-moshi:$RETROFIT_VERSION",
-            rxjava2: "com.squareup.retrofit2:adapter-rxjava2:$RETROFIT_VERSION",
             interceptor: "com.squareup.okhttp3:logging-interceptor:$OK_HTTP_VERSION"
     ]
-
-    // Test
-    jUnit = "junit:junit:$JUNIT_VERSION"
 
     // Classpath
     classpaths = [
