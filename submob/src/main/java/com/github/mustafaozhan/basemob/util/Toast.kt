@@ -30,7 +30,7 @@ object Toast {
             text,
             if (isLong) Toast.LENGTH_LONG else Toast.LENGTH_SHORT
         )
-        tintColor ?: R.color.colorPrimaryBlack.let {
+        tintColor ?: R.color.toast_text_color.let {
             _toast?.view?.apply {
                 setBackgroundResource(android.R.drawable.toast_frame)
                 (background as? GradientDrawable)?.setColor(ContextCompat.getColor(context, it))
@@ -57,7 +57,7 @@ object Toast {
             context.getString(text),
             if (isLong) Toast.LENGTH_LONG else Toast.LENGTH_SHORT
         )
-        tintColor ?: R.color.colorPrimaryBlack.let {
+        tintColor ?: R.color.toast_text_color.let {
             _toast?.view?.apply {
                 setBackgroundResource(android.R.drawable.toast_frame)
                 (background as? GradientDrawable)?.setColor(ContextCompat.getColor(context, it))

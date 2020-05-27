@@ -17,7 +17,7 @@
 
     <!-- Dialog -->
     <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="android:textColor">@color/cyan_700</item>
+        <item name="android:textColor">@color/dialog_text_color</item>
         <item name="android:fontFamily">@font/news_cycle_regular</item>
         <item name="android:textStyle">bold</item>
     </style>

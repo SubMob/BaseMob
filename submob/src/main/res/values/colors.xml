@@ -2,7 +2,8 @@
   Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
   -->
 <resources>
-    <color name="colorPrimaryBlack">#171E22</color>
-    <color name="colorPrimarySemiDark">#37474F</color>
-    <color name="cyan_700">#0097A7</color>
+    <color name="toast_text_color">#171E22</color>
+    <color name="dialog_text_color">#0097A7</color>
+    <color name="snack_bar_action_text_color">#0097A7</color>
+    <color name="snack_bar_background_color">#37474F</color>
 </resources>

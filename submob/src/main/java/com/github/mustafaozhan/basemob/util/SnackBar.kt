@@ -25,12 +25,12 @@ fun showSnack(
 ).apply {
     setAction(actionText?.let { context.getString(it) } ?: "") { action?.invoke() }
     this.view.apply {
-        setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimarySemiDark))
+        setBackgroundColor(ContextCompat.getColor(context, R.color.snack_bar_background_color))
         findViewById<TextView>(R.id.snackbar_text)
             ?.setCompoundDrawablesWithIntrinsicBounds(icon ?: R.mipmap.ic_launcher, 0, 0, 0)
         findViewById<TextView>(R.id.snackbar_action)?.apply {
             setTypeface(null, Typeface.BOLD)
-            setTextColor(ContextCompat.getColor(context, R.color.cyan_700))
+            setTextColor(ContextCompat.getColor(context, R.color.snack_bar_action_text_color))
         }
     }
 }.show()
@@ -50,12 +50,12 @@ fun showSnack(
 ).apply {
     setAction(actionText) { action?.invoke() }
     this.view.apply {
-        setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimarySemiDark))
+        setBackgroundColor(ContextCompat.getColor(context, R.color.snack_bar_background_color))
         findViewById<TextView>(R.id.snackbar_text)
             .setCompoundDrawablesWithIntrinsicBounds(icon ?: R.mipmap.ic_launcher, 0, 0, 0)
         findViewById<TextView>(R.id.snackbar_action).apply {
             setTypeface(null, Typeface.BOLD)
-            setTextColor(ContextCompat.getColor(context, R.color.cyan_700))
+            setTextColor(ContextCompat.getColor(context, R.color.snack_bar_action_text_color))
         }
     }
 }.show()
