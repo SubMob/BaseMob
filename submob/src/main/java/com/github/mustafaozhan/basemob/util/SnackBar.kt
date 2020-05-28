@@ -33,7 +33,6 @@ fun showSnack(
             gravity = Gravity.CENTER
             setCompoundDrawablesWithIntrinsicBounds(icon ?: R.mipmap.ic_launcher, 0, 0, 0)
             compoundDrawablePadding = IMAGE_PADDING
-
         }
         findViewById<TextView>(R.id.snackbar_action)?.apply {
             setTypeface(null, Typeface.BOLD)
