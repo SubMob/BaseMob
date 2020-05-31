@@ -36,13 +36,14 @@ abstract class BaseFragment : Fragment() {
     ) = findNavController().let {
         if (it.currentDestination?.id == currentDestinationId) {
             it.navigate(
-                navDirections, NavOptions.Builder()
-                .setLaunchSingleTop(true)
-                .setEnterAnim(R.anim.enter_from_right)
-                .setExitAnim(R.anim.exit_to_left)
-                .setPopEnterAnim(R.anim.enter_from_left)
-                .setPopExitAnim(R.anim.exit_to_right)
-                .build()
+                navDirections,
+                NavOptions.Builder()
+                    .setLaunchSingleTop(true)
+                    .setEnterAnim(R.anim.enter_from_right)
+                    .setExitAnim(R.anim.exit_to_left)
+                    .setPopEnterAnim(R.anim.enter_from_left)
+                    .setPopExitAnim(R.anim.exit_to_right)
+                    .build()
             )
         }
     }

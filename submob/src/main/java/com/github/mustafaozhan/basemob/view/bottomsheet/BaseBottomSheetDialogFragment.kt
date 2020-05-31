@@ -41,15 +41,25 @@ abstract class BaseBottomSheetDialogFragment : AppCompatDialogFragment() {
         bottomSheetDialog.behavior.state = BottomSheetBehavior.STATE_COLLAPSED
     }
 
-    private fun dismissDialog() = findNavController().navigateUp()
-
-    protected fun navigate(
+    fun navigate(
         currentDestinationId: Int,
-        navDirections: NavDirections
-    ) = findNavController().let {
-        if (it.currentDestination?.id == currentDestinationId) {
-            it.navigate(navDirections, NavOptions.Builder().setLaunchSingleTop(true).build())
-            dismissDialog()
+        navDirections: NavDirections,
+        dismiss: Boolean,
+        animate: Boolean = true
+    ) = findNavController().apply {
+        if (currentDestination?.id == currentDestinationId) {
+            val navigationBuilder = NavOptions.Builder().setLaunchSingleTop(true)
+
+            if (animate) {
+                navigationBuilder.setEnterAnim(R.anim.enter_from_right)
+                    .setExitAnim(R.anim.exit_to_left)
+                    .setPopEnterAnim(R.anim.enter_from_left)
+                    .setPopExitAnim(R.anim.exit_to_right)
+            }
+
+            navigate(navDirections, navigationBuilder.build())
+
+            if (dismiss) navigateUp()
         }
     }
 }

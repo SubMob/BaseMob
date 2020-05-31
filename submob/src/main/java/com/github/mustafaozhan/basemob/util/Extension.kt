@@ -19,3 +19,6 @@ fun <T> SingleLiveData<T>.reObserveSingle(owner: LifecycleOwner, observer: Obser
     removeObserver(observer)
     observe(owner, observer)
 }
+
+@Suppress("unused")
+fun Any.toUnit() = Unit
