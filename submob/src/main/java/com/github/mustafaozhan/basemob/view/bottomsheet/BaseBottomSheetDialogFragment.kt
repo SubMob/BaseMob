@@ -43,13 +43,13 @@ abstract class BaseBottomSheetDialogFragment : AppCompatDialogFragment() {
 
     private fun dismissDialog() = findNavController().navigateUp()
 
-    protected fun navigate(navDirections: NavDirections) {
-        findNavController()
-            .navigate(
-                navDirections, NavOptions.Builder()
-                .setLaunchSingleTop(true)
-                .build()
-            )
-        dismissDialog()
+    protected fun navigate(
+        currentDestinationId: Int,
+        navDirections: NavDirections
+    ) = findNavController().let {
+        if (it.currentDestination?.id == currentDestinationId) {
+            it.navigate(navDirections, NavOptions.Builder().setLaunchSingleTop(true).build())
+            dismissDialog()
+        }
     }
 }
