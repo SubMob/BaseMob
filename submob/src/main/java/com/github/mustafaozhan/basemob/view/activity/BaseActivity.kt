@@ -27,7 +27,7 @@ abstract class BaseActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(enabled)
 
     protected fun navigate(navDirections: NavDirections) =
-        findNavController(containerId).navigate(
+        getNavigationController().navigate(
             navDirections, NavOptions.Builder()
             .setLaunchSingleTop(true)
             .setEnterAnim(R.anim.enter_from_right)
@@ -36,4 +36,6 @@ abstract class BaseActivity : AppCompatActivity() {
             .setPopExitAnim(R.anim.exit_to_right)
             .build()
         )
+
+    protected fun getNavigationController() = findNavController(containerId)
 }
