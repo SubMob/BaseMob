@@ -41,6 +41,8 @@ abstract class BaseBottomSheetDialogFragment : AppCompatDialogFragment() {
         bottomSheetDialog.behavior.state = BottomSheetBehavior.STATE_COLLAPSED
     }
 
+    protected fun dismissDialog() = findNavController().navigateUp()
+
     fun navigate(
         currentDestinationId: Int,
         navDirections: NavDirections,
