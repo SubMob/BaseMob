@@ -17,7 +17,7 @@ open class SingleLiveData<T> : LiveData<T>() {
     @MainThread
     override fun observe(owner: LifecycleOwner, observer: Observer<in T>) {
         if (hasActiveObservers()) {
-            throw SingleLiveDataException("Multiple observers registered.")
+            throw SingleLiveDataException()
         }
 
         super.observe(owner, Observer {

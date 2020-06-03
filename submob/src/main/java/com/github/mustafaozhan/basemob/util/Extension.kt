@@ -25,9 +25,8 @@ fun <T> SingleLiveData<T>.reObserveSingle(owner: LifecycleOwner, observer: Obser
 fun <T> Fragment.getNavigationResult(key: String) =
     findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<T>(key)
 
-fun <T> Fragment.setNavigationResult(result: T, key: String) {
+fun <T> Fragment.setNavigationResult(result: T, key: String) =
     findNavController().previousBackStackEntry?.savedStateHandle?.set(key, result)
-}
 
 @Suppress("unused")
 fun Any.toUnit() = Unit
