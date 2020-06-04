@@ -11,11 +11,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 
-fun <T> LiveData<T>.reObserve(owner: LifecycleOwner, observer: Observer<T>) {
-    removeObserver(observer)
-    observe(owner, observer)
-}
-
 fun <T> Fragment.getNavigationResult(key: String) =
     findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<T>(key)
 
