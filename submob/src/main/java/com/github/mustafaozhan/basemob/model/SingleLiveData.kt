@@ -7,7 +7,6 @@ import androidx.annotation.MainThread
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import com.github.mustafaozhan.basemob.error.SingleLiveDataException
 import java.util.concurrent.atomic.AtomicBoolean
 
 open class SingleLiveData<T> : LiveData<T>() {
@@ -16,9 +15,10 @@ open class SingleLiveData<T> : LiveData<T>() {
     @Throws
     @MainThread
     override fun observe(owner: LifecycleOwner, observer: Observer<in T>) {
-        if (hasActiveObservers()) {
-            throw SingleLiveDataException()
-        }
+//        todo need to solve
+//        if (hasActiveObservers()) {
+//            throw SingleLiveDataException()
+//        }
 
         super.observe(owner, Observer {
             if (pending.compareAndSet(true, false)) {
