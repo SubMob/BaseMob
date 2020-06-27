@@ -1,7 +1,7 @@
 /*
  Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.basemob.data.preferences
+package com.github.mustafaozhan.basemob.data
 
 import android.content.Context
 import androidx.core.content.edit
