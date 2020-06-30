@@ -32,13 +32,9 @@ abstract class BaseBottomSheetDialogFragment : AppCompatDialogFragment() {
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        bottomSheetDialog = BottomSheetDialog(requireContext(), theme)
-        return bottomSheetDialog
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        bottomSheetDialog.behavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        val dialog = BottomSheetDialog(requireContext(), theme)
+        dialog.behavior.state = BottomSheetBehavior.STATE_EXPANDED
+        return dialog
     }
 
     protected fun dismissDialog() = findNavController().navigateUp()
