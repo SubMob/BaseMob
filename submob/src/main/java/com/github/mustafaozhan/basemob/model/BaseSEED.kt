@@ -4,7 +4,7 @@
 package com.github.mustafaozhan.basemob.model
 
 open class BaseState
-open class BaseStateBacking
+open class MutableBaseState
 
 interface BaseEvent
 
