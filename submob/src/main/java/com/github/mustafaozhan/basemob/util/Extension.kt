@@ -23,4 +23,4 @@ fun <T> LiveData<T>.reObserve(owner: LifecycleOwner, observer: Observer<T>) {
 }
 
 @Suppress("unused")
-fun Any.toUnit() = Unit
+fun Any?.toUnit() = Unit
