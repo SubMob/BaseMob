@@ -2,8 +2,21 @@
   Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
   -->
 <resources>
-    <color name="toast_text_color">#171E22</color>
-    <color name="dialog_text_color">#0097A7</color>
-    <color name="snack_bar_action_text_color">#0097A7</color>
-    <color name="snack_bar_background_color">#37474F</color>
+
+    <!-- Toast -->
+    <color name="color_background_toast">#171E22</color>
+    <color name="color_text_toast">@android:color/white</color>
+    <color name="color_icon_toast">@android:color/white</color>
+
+    <!-- Dialog -->
+    <color name="color_text_title_dialog">#0097A7</color>
+    <color name="color_text_message_dialog">@android:color/white</color>
+    <color name="color_background_dialog">@android:color/white</color>
+    <color name="color_text_positive_button_dialog">#0097A7</color>
+    <color name="color_text_neutral_button_dialog">#0097A7</color>
+    <color name="color_text_negative_button_dialog">#0097A7</color>
+
+    <!-- Snack Bar -->
+    <color name="color_text_action_snack_bar">#0097A7</color>
+    <color name="color_background_snack_bar">#37474F</color>
 </resources>

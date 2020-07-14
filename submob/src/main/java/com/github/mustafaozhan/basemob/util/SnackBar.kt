@@ -28,7 +28,7 @@ fun showSnack(
 ).apply {
     setAction(actionText?.let { context.getString(it) } ?: "") { action?.invoke() }
     this.view.apply {
-        setBackgroundColor(ContextCompat.getColor(context, R.color.snack_bar_background_color))
+        setBackgroundColor(ContextCompat.getColor(context, R.color.color_background_snack_bar))
         findViewById<TextView>(R.id.snackbar_text)?.apply {
             gravity = Gravity.CENTER
             setCompoundDrawablesWithIntrinsicBounds(icon ?: R.mipmap.ic_launcher, 0, 0, 0)
@@ -36,7 +36,7 @@ fun showSnack(
         }
         findViewById<TextView>(R.id.snackbar_action)?.apply {
             setTypeface(null, Typeface.BOLD)
-            setTextColor(ContextCompat.getColor(context, R.color.snack_bar_action_text_color))
+            setTextColor(ContextCompat.getColor(context, R.color.color_text_action_snack_bar))
         }
     }
 }.show()
@@ -56,7 +56,7 @@ fun showSnack(
 ).apply {
     setAction(actionText) { action?.invoke() }
     this.view.apply {
-        setBackgroundColor(ContextCompat.getColor(context, R.color.snack_bar_background_color))
+        setBackgroundColor(ContextCompat.getColor(context, R.color.color_background_snack_bar))
         findViewById<TextView>(R.id.snackbar_text)?.apply {
             gravity = Gravity.CENTER
             setCompoundDrawablesWithIntrinsicBounds(icon ?: R.mipmap.ic_launcher, 0, 0, 0)
@@ -64,7 +64,7 @@ fun showSnack(
         }
         findViewById<TextView>(R.id.snackbar_action)?.apply {
             setTypeface(null, Typeface.BOLD)
-            setTextColor(ContextCompat.getColor(context, R.color.snack_bar_action_text_color))
+            setTextColor(ContextCompat.getColor(context, R.color.color_text_action_snack_bar))
         }
     }
 }.show()

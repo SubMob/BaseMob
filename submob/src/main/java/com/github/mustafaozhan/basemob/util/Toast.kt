@@ -4,7 +4,6 @@
 package com.github.mustafaozhan.basemob.util
 
 import android.content.Context
-import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.view.Gravity
 import android.widget.TextView
@@ -22,8 +21,7 @@ object Toast {
         context: Context,
         text: String,
         isLong: Boolean = true,
-        tintColor: Int? = null,
-        textColor: Int = Color.WHITE
+        tintColor: Int? = null
     ) {
         _toast?.cancel()
         _toast = Toast.makeText(
@@ -35,10 +33,10 @@ object Toast {
             setBackgroundResource(android.R.drawable.toast_frame)
             (background as? GradientDrawable)?.setColor(ContextCompat.getColor(
                 context,
-                tintColor ?: R.color.toast_text_color
+                tintColor ?: R.color.color_background_toast
             ))
             findViewById<TextView>(android.R.id.message)?.apply {
-                setTextColor(textColor)
+                setTextColor(ContextCompat.getColor(context, R.color.color_text_toast))
                 gravity = Gravity.CENTER
                 setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_info, 0, 0, 0)
                 compoundDrawablePadding = imagePadding
@@ -52,8 +50,7 @@ object Toast {
         context: Context,
         text: Int,
         isLong: Boolean = true,
-        tintColor: Int? = null,
-        textColor: Int = Color.WHITE
+        tintColor: Int? = null
     ) {
         _toast?.cancel()
         _toast = Toast.makeText(
@@ -66,10 +63,10 @@ object Toast {
             setBackgroundResource(android.R.drawable.toast_frame)
             (background as? GradientDrawable)?.setColor(ContextCompat.getColor(
                 context,
-                tintColor ?: R.color.toast_text_color
+                tintColor ?: R.color.color_background_toast
             ))
             findViewById<TextView>(android.R.id.message)?.apply {
-                setTextColor(textColor)
+                setTextColor(ContextCompat.getColor(context, R.color.color_text_toast))
                 gravity = Gravity.CENTER
                 setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_info, 0, 0, 0)
                 compoundDrawablePadding = imagePadding
