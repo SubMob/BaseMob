@@ -14,8 +14,8 @@ import androidx.navigation.fragment.findNavController
 fun <T> Fragment.getNavigationResult(key: String) =
     findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<T>(key)
 
-fun <T> Fragment.setNavigationResult(result: T, key: String) =
-    findNavController().previousBackStackEntry?.savedStateHandle?.set(key, result)
+fun <T> Fragment.setNavigationResult(destinationId: Int, result: T, key: String) =
+    findNavController().getBackStackEntry(destinationId).savedStateHandle.set(key, result)
 
 fun <T> LiveData<T>.reObserve(owner: LifecycleOwner, observer: Observer<T>) {
     removeObserver(observer)
