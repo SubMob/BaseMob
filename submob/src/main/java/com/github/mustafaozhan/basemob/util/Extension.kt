@@ -5,6 +5,7 @@
 
 package com.github.mustafaozhan.basemob.util
 
+import android.annotation.SuppressLint
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
@@ -14,8 +15,13 @@ import androidx.navigation.fragment.findNavController
 fun <T> Fragment.getNavigationResult(key: String) =
     findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<T>(key)
 
+// todo here needs to be changed
+@SuppressLint("RestrictedApi")
 fun <T> Fragment.setNavigationResult(destinationId: Int, result: T, key: String) =
-    findNavController().getBackStackEntry(destinationId).savedStateHandle.set(key, result)
+    findNavController()
+        .backStack
+        .firstOrNull { it.destination.id == destinationId }
+        ?.savedStateHandle?.set(key, result)
 
 fun <T> LiveData<T>.reObserve(owner: LifecycleOwner, observer: Observer<T>) {
     removeObserver(observer)
