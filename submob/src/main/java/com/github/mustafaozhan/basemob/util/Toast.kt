@@ -31,15 +31,17 @@ object Toast {
         )
         _toast?.view?.apply {
             setBackgroundResource(android.R.drawable.toast_frame)
-            (background as? GradientDrawable)?.setColor(ContextCompat.getColor(
-                context,
-                tintColor ?: R.color.color_background_toast
-            ))
-            findViewById<TextView>(android.R.id.message)?.apply {
-                setTextColor(ContextCompat.getColor(context, R.color.color_text_toast))
-                gravity = Gravity.CENTER
-                setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_info, 0, 0, 0)
-                compoundDrawablePadding = imagePadding
+            (background as? GradientDrawable)?.let {
+                it.setColor(ContextCompat.getColor(
+                    context,
+                    tintColor ?: R.color.color_background_toast
+                ))
+                findViewById<TextView>(android.R.id.message)?.apply {
+                    setTextColor(ContextCompat.getColor(context, R.color.color_text_toast))
+                    gravity = Gravity.CENTER
+                    setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_info, 0, 0, 0)
+                    compoundDrawablePadding = imagePadding
+                }
             }
         }
 
@@ -61,15 +63,17 @@ object Toast {
 
         _toast?.view?.apply {
             setBackgroundResource(android.R.drawable.toast_frame)
-            (background as? GradientDrawable)?.setColor(ContextCompat.getColor(
-                context,
-                tintColor ?: R.color.color_background_toast
-            ))
-            findViewById<TextView>(android.R.id.message)?.apply {
-                setTextColor(ContextCompat.getColor(context, R.color.color_text_toast))
-                gravity = Gravity.CENTER
-                setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_info, 0, 0, 0)
-                compoundDrawablePadding = imagePadding
+            (background as? GradientDrawable)?.let {
+                it.setColor(ContextCompat.getColor(
+                    context,
+                    tintColor ?: R.color.color_background_toast
+                ))
+                findViewById<TextView>(android.R.id.message)?.apply {
+                    setTextColor(ContextCompat.getColor(context, R.color.color_text_toast))
+                    gravity = Gravity.CENTER
+                    setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_info, 0, 0, 0)
+                    compoundDrawablePadding = imagePadding
+                }
             }
         }
 
