@@ -31,7 +31,8 @@ fun showSnack(
         setBackgroundColor(ContextCompat.getColor(context, R.color.color_background_snack_bar))
         findViewById<TextView>(R.id.snackbar_text)?.apply {
             gravity = Gravity.CENTER
-            setCompoundDrawablesWithIntrinsicBounds(icon ?: R.mipmap.ic_launcher, 0, 0, 0)
+            setCompoundDrawablesWithIntrinsicBounds(icon
+                ?: R.drawable.ic_dialog_and_snackbar, 0, 0, 0)
             compoundDrawablePadding = IMAGE_PADDING
         }
         findViewById<TextView>(R.id.snackbar_action)?.apply {
@@ -59,7 +60,8 @@ fun showSnack(
         setBackgroundColor(ContextCompat.getColor(context, R.color.color_background_snack_bar))
         findViewById<TextView>(R.id.snackbar_text)?.apply {
             gravity = Gravity.CENTER
-            setCompoundDrawablesWithIntrinsicBounds(icon ?: R.mipmap.ic_launcher, 0, 0, 0)
+            setCompoundDrawablesWithIntrinsicBounds(icon
+                ?: R.drawable.ic_dialog_and_snackbar, 0, 0, 0)
             compoundDrawablePadding = IMAGE_PADDING
         }
         findViewById<TextView>(R.id.snackbar_action)?.apply {

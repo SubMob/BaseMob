@@ -21,7 +21,7 @@ fun showDialog(
     if (!activity.isFinishing) {
         val dialog = AlertDialog
             .Builder(activity, R.style.AlertDialogCustom)
-            .setIcon(R.mipmap.ic_launcher)
+            .setIcon(R.drawable.ic_dialog_and_snackbar)
             .setTitle(title)
             .setMessage(message)
             .setPositiveButton(positiveButton) { _, _ -> function?.invoke() }
@@ -48,7 +48,7 @@ fun showDialog(
     if (!activity.isFinishing) {
         val dialog = AlertDialog
             .Builder(activity, R.style.AlertDialogCustom)
-            .setIcon(R.mipmap.ic_launcher)
+            .setIcon(R.drawable.ic_dialog_and_snackbar)
             .setTitle(activity.getString(title))
             .setMessage(activity.getString(message))
             .setPositiveButton(activity.getText(positiveButton)) { _, _ -> function?.invoke() }
@@ -73,7 +73,7 @@ fun showSingleChoiceDialog(
     if (!activity.isFinishing) {
         AlertDialog
             .Builder(activity, R.style.AlertDialogCustom)
-            .setIcon(R.mipmap.ic_launcher)
+            .setIcon(R.drawable.ic_dialog_and_snackbar)
             .setTitle(title)
             .setSingleChoiceItems(items, selectedIndex) { _, which ->
                 choiceAction?.invoke(which)
@@ -92,7 +92,7 @@ fun showSingleChoiceDialog(
     if (!activity.isFinishing) {
         AlertDialog
             .Builder(activity, R.style.AlertDialogCustom)
-            .setIcon(R.mipmap.ic_launcher)
+            .setIcon(R.drawable.ic_dialog_and_snackbar)
             .setTitle(activity.getString(title))
             .setSingleChoiceItems(items, selectedIndex) { _, which ->
                 choiceAction?.invoke(which)

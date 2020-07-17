@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.github.mustafaozhan.basemob.R
 
+@Suppress("unused")
 object Toast {
     private const val imagePadding = 24
 
