@@ -8,7 +8,7 @@ import java.io.File
 import java.util.concurrent.TimeUnit
 
 object Versions {
-    const val kotlinVersion = "1.3.72"
+    const val kotlinVersion = "1.4.0"
     const val androidPluginVersion = "4.0.1"
     const val daggerVersion = "2.28.3"
     const val androidMaterialVersion = "1.2.0"
@@ -29,6 +29,12 @@ object Dependencies {
 object Classpaths {
     const val androidBuildTools = "com.android.tools.build:gradle:${Versions.androidPluginVersion}"
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}"
+}
+
+object Plugins {
+    const val library = "com.android.library"
+    const val android = "android"
+    const val kapt = "kapt"
 }
 
 object ProjectSettings {
