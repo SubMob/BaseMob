@@ -1,7 +1,7 @@
 /*
- Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
+ * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.basemob.view.adapter
+package com.github.mustafaozhan.basemob.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -19,7 +19,7 @@ abstract class BaseVBRecyclerViewAdapter<T, TViewBinding : ViewBinding>(
     }
 
     abstract class BaseVBViewHolder<out T, TViewBinding : ViewBinding>(
-        protected val itemBinding: TViewBinding
+        itemBinding: TViewBinding
     ) : RecyclerView.ViewHolder(itemBinding.root) {
 
         abstract fun onItemBind(item: @UnsafeVariance T)

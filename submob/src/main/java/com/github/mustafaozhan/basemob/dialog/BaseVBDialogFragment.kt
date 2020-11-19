@@ -1,14 +1,15 @@
 /*
- Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
+ * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.basemob.view.dialog
+package com.github.mustafaozhan.basemob.dialog
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseVBDialogFragment<TViewBinding : ViewBinding> : BaseDialogFragment() {
+abstract class BaseVBDialogFragment<TViewBinding : ViewBinding> : DialogFragment() {
 
     protected lateinit var binding: TViewBinding
 

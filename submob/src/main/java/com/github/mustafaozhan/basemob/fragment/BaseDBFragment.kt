@@ -1,7 +1,7 @@
 /*
- Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
+ * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.basemob.view.fragment
+package com.github.mustafaozhan.basemob.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

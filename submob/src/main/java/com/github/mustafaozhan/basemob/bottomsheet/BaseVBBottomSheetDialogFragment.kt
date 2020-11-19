@@ -1,14 +1,14 @@
 /*
- Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
+ * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.basemob.view.fragment
+package com.github.mustafaozhan.basemob.bottomsheet
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseVBFragment<TViewBinding : ViewBinding> : BaseFragment() {
+abstract class BaseVBBottomSheetDialogFragment<TViewBinding : ViewBinding> : BaseBottomSheetDialogFragment() {
 
     protected lateinit var binding: TViewBinding
 

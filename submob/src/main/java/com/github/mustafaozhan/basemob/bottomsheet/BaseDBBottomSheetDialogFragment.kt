@@ -1,7 +1,7 @@
 /*
- Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
+ * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.basemob.view.dialog
+package com.github.mustafaozhan.basemob.bottomsheet
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 
-abstract class BaseDBDialogFragment<TDataBinding : ViewDataBinding> : BaseDialogFragment() {
+abstract class BaseDBBottomSheetDialogFragment<TDataBinding : ViewDataBinding> : BaseBottomSheetDialogFragment() {
+
     protected lateinit var binding: TDataBinding
 
     abstract fun bind(container: ViewGroup?): TDataBinding

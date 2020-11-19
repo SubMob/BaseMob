@@ -8,33 +8,28 @@ import java.io.File
 import java.util.concurrent.TimeUnit
 
 object Versions {
-    const val kotlinVersion = "1.4.0"
-    const val androidPluginVersion = "4.0.1"
-    const val daggerVersion = "2.28.3"
-    const val androidMaterialVersion = "1.2.0"
-    const val navigationVersion = "2.3.0"
-    const val moshiConverterVersion = "2.9.0"
-    const val okhttpInterceptorVersion = "4.8.1"
+    const val kotlin = "1.4.20-RC"
+    const val androidPlugin = "4.2.0-alpha16"
+    const val androidMaterial = "1.3.0-alpha03"
+    const val navigation = "2.3.1"
 }
 
 object Dependencies {
-    const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlinVersion}"
-    const val androidMaterial = "com.google.android.material:material:${Versions.androidMaterialVersion}"
-    const val dagger = "com.google.dagger:dagger-android-support:${Versions.daggerVersion}"
-    const val navigation = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationVersion}"
-    const val moshiConverter = "com.squareup.retrofit2:converter-moshi:${Versions.moshiConverterVersion}"
-    const val okhttpInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttpInterceptorVersion}"
+    object Android {
+        const val androidMaterial =
+            "com.google.android.material:material:${Versions.androidMaterial}"
+        const val navigation = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+    }
 }
 
 object Classpaths {
-    const val androidBuildTools = "com.android.tools.build:gradle:${Versions.androidPluginVersion}"
-    const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}"
+    const val androidBuildTools = "com.android.tools.build:gradle:${Versions.androidPlugin}"
+    const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
 }
 
 object Plugins {
     const val library = "com.android.library"
     const val android = "android"
-    const val kapt = "kapt"
 }
 
 object ProjectSettings {

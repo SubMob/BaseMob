@@ -1,7 +1,7 @@
 /*
- Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
+ * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.basemob.view.activity
+package com.github.mustafaozhan.basemob.activity
 
 import android.os.Bundle
 import androidx.viewbinding.ViewBinding

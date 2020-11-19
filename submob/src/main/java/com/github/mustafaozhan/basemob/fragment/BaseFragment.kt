@@ -1,27 +1,20 @@
 /*
- Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
+ * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.basemob.view.fragment
+package com.github.mustafaozhan.basemob.fragment
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.github.mustafaozhan.basemob.R
-import com.github.mustafaozhan.basemob.view.activity.BaseActivity
-import dagger.android.support.AndroidSupportInjection
+import com.github.mustafaozhan.basemob.activity.BaseActivity
 
 @Suppress("unused")
 abstract class BaseFragment : Fragment() {
 
     val fragmentTag: String = this.javaClass.simpleName
-
-    override fun onAttach(context: Context) {
-        AndroidSupportInjection.inject(this)
-        super.onAttach(context)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

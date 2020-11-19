@@ -5,7 +5,6 @@ plugins {
     with(Plugins) {
         id(library)
         kotlin(android)
-        kotlin(kapt)
     }
 }
 
@@ -34,12 +33,8 @@ android {
 }
 
 dependencies {
-    with(Dependencies) {
-        implementation(kotlin)
-        implementation(dagger)
+    with(Dependencies.Android) {
         implementation(navigation)
         implementation(androidMaterial)
-        implementation(moshiConverter)
-        implementation(okhttpInterceptor)
     }
 }
