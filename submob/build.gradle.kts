@@ -1,9 +1,9 @@
 /*
- Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
+ * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
 plugins {
     with(Plugins) {
-        id(library)
+        id(androidLibrary)
         kotlin(android)
     }
 }
