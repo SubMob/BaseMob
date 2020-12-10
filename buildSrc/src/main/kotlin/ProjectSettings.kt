@@ -1,36 +1,10 @@
 /*
  * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-@file:Suppress("SpellCheckingInspection")
 
 import org.gradle.api.Project
 import java.io.File
 import java.util.concurrent.TimeUnit
-
-object Versions {
-    const val kotlin = "1.4.21"
-    const val androidPlugin = "7.0.0-alpha02"
-    const val androidMaterial = "1.3.0-alpha04"
-    const val navigation = "2.3.2"
-}
-
-object Dependencies {
-    object Android {
-        const val androidMaterial =
-            "com.google.android.material:material:${Versions.androidMaterial}"
-        const val navigation = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
-    }
-}
-
-object Classpaths {
-    const val androidBuildTools = "com.android.tools.build:gradle:${Versions.androidPlugin}"
-    const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
-}
-
-object Plugins {
-    const val library = "com.android.library"
-    const val android = "android"
-}
 
 object ProjectSettings {
     private const val projectMayorVersion = 2
