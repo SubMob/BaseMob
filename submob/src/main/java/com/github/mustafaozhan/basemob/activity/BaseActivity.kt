@@ -5,8 +5,6 @@ package com.github.mustafaozhan.basemob.activity
 
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavDirections
-import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import com.github.mustafaozhan.basemob.R
 
@@ -15,20 +13,6 @@ abstract class BaseActivity : AppCompatActivity() {
 
     @IdRes
     protected var containerId: Int = R.id.content
-
-    protected fun setHomeAsUpEnabled(enabled: Boolean) =
-        supportActionBar?.setDisplayHomeAsUpEnabled(enabled)
-
-    protected fun navigate(navDirections: NavDirections) =
-        getNavigationController().navigate(
-            navDirections, NavOptions.Builder()
-                .setLaunchSingleTop(true)
-                .setEnterAnim(R.anim.enter_from_right)
-                .setExitAnim(R.anim.exit_to_left)
-                .setPopEnterAnim(R.anim.enter_from_left)
-                .setPopExitAnim(R.anim.exit_to_right)
-                .build()
-        )
 
     protected fun getNavigationController() = findNavController(containerId)
 }

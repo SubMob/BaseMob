@@ -25,19 +25,28 @@ abstract class BaseFragment : Fragment() {
 
     protected fun navigate(
         currentDestinationId: Int,
-        navDirections: NavDirections
+        navDirections: NavDirections,
+        animate: Boolean = true
     ) = findNavController().let {
         if (it.currentDestination?.id == currentDestinationId) {
-            it.navigate(
-                navDirections,
-                NavOptions.Builder()
-                    .setLaunchSingleTop(true)
+            val navOptionsBuilder = it.graph
+                .findNode(currentDestinationId)
+                ?.getAction(navDirections.actionId)
+                ?.navOptions?.let { options ->
+                    NavOptions.Builder()
+                        .setLaunchSingleTop(options.shouldLaunchSingleTop())
+                        .setPopUpTo(options.popUpTo, options.isPopUpToInclusive)
+                } ?: NavOptions.Builder()
+
+            if (animate) {
+                navOptionsBuilder
                     .setEnterAnim(R.anim.enter_from_right)
                     .setExitAnim(R.anim.exit_to_left)
                     .setPopEnterAnim(R.anim.enter_from_left)
                     .setPopExitAnim(R.anim.exit_to_right)
-                    .build()
-            )
+            }
+
+            it.navigate(navDirections, navOptionsBuilder.build())
         }
     }
 }
