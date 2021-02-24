@@ -5,6 +5,8 @@ plugins {
     with(Plugins) {
         id(androidLibrary)
         kotlin(android)
+        `maven-publish`
+        signing
     }
 }
 
