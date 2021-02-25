@@ -1,8 +1,8 @@
 # basemob
 
-[![master](https://github.com/SUB-MOB/basemob/actions/workflows/master.yml/badge.svg)](https://github.com/SUB-MOB/basemob/actions/workflows/master.yml)
+[![master](https://github.com/SubMob/BaseMob/actions/workflows/master.yml/badge.svg)](https://github.com/SumMob/BaseMob/actions/workflows/master.yml)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.sub-mob/basemob/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.sub-mob/basemob)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/32600d90388a4f1bb55d45744ee49026)](https://www.codacy.com/gh/SUB-MOB/basemob?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SUB-MOB/basemob&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/32600d90388a4f1bb55d45744ee49026)](https://www.codacy.com/gh/SubMob/BaseMob?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SubMob/BaseMob&amp;utm_campaign=Badge_Grade)
 
 ## Install
 
@@ -18,7 +18,7 @@ Then, simply add the dependency to your common source-set dependencies
 
 ```groovy
 commonMain {
-    mplementation("com.github.sub-mob:basemob:LATEST_VERSION")
+    implementation("com.github.sub-mob:basemob:LATEST_VERSION")
 }
 ```
 

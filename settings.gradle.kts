@@ -1,5 +1,5 @@
 /*
  Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-rootProject.name = "base-mob"
+rootProject.name = "BaseMob"
 include(":basemob")

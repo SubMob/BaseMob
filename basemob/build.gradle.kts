@@ -46,7 +46,6 @@ val androidSourcesJar by tasks.register("androidSourcesJar", Jar::class) {
     from(android.sourceSets.getByName("main").java.srcDirs)
 }
 
-
 allprojects {
 
     with(Library) {
@@ -122,10 +121,10 @@ val isReleaseBuild: Boolean
 
 object Library {
     const val libraryGroup = "com.github.sub-mob"
-    const val libraryVersion = "2.0.0"
+    const val libraryVersion = "2.0.1"
 
-    const val libraryUrl = "https://github.com/SUB-MOB/basemob"
-    const val libraryName = "Base Mob"
+    const val libraryUrl = "https://github.com/SubMob/BaseMob"
+    const val libraryName = "BaseMob"
     const val libraryDescription = "Set of base classes for Android"
 
     const val developerName = "Mustafa Ozhan"
