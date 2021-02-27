@@ -5,12 +5,19 @@
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         with(ClassPaths) {
             classpath(androidBuildTools)
             classpath(kotlinGradlePlugin)
         }
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
     }
 }

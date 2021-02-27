@@ -36,81 +36,81 @@ dependencies {
     }
 }
 
-val androidJavaDocJar by tasks.register("androidJavadocJar", Jar::class) {
-    archiveClassifier.set("javadoc")
-    from("$buildDir/javadoc")
+tasks {
+    register("androidJavadocJar", Jar::class) {
+        archiveClassifier.set("javadoc")
+        from("$buildDir/javadoc")
+    }
+
+    register("androidSourcesJar", Jar::class) {
+        archiveClassifier.set("sources")
+        from(android.sourceSets.getByName("main").java.srcDirs)
+    }
 }
 
-val androidSourcesJar by tasks.register("androidSourcesJar", Jar::class) {
-    archiveClassifier.set("sources")
-    from(android.sourceSets.getByName("main").java.srcDirs)
-}
+publishing {
+    publications {
+        register<MavenPublication>("mavenAndroid") {
+            with(Library) {
+                group = libraryGroup
+                version = libraryVersion
 
-allprojects {
+                afterEvaluate {
+                    artifact(tasks.getByName("bundleReleaseAar"))
 
-    with(Library) {
-
-        group = libraryGroup
-        version = libraryVersion
-
-        repositories {
-            google()
-            mavenCentral()
-            jcenter()
-        }
-
-        afterEvaluate {
-            extensions.findByType<PublishingExtension>()?.apply {
-                repositories {
-                    maven {
-                        url = uri(if (isReleaseBuild) releaseUrl else snapshotUrl)
-                        credentials {
-                            username = System.getenv("MAVEN_USERNAME")?.toString()
-                            password = System.getenv("MAVEN_PASSWORD")?.toString()
+                    extensions.findByType<PublishingExtension>()?.apply {
+                        repositories {
+                            maven {
+                                url = uri(if (isReleaseBuild) releaseUrl else snapshotUrl)
+                                credentials {
+                                    username = System.getenv("MAVEN_USERNAME")?.toString()
+                                    password = System.getenv("MAVEN_PASSWORD")?.toString()
+                                }
+                            }
                         }
+                    }
+
+                    extensions.findByType<SigningExtension>()?.apply {
+                        val publishing =
+                            extensions.findByType<PublishingExtension>() ?: return@apply
+                        val key = System.getenv("GPG_KEY")?.toString()?.replace("\\n", "\n")
+                        val password = System.getenv("GPG_PASSWORD")?.toString()
+
+                        @Suppress("UnstableApiUsage")
+                        useInMemoryPgpKeys(key, password)
+                        sign(publishing.publications)
+                    }
+
+                    tasks.withType<Sign>().configureEach {
+                        onlyIf { isReleaseBuild }
                     }
                 }
 
-                publications.register<MavenPublication>("mavenAndroid") {
-                    artifact(androidJavaDocJar)
-                    artifact(androidSourcesJar)
+                artifact(tasks.getByName("androidJavadocJar"))
+                artifact(tasks.getByName("androidSourcesJar"))
 
-                    pom {
-                        name.set(libraryName)
-                        description.set(libraryDescription)
-                        url.set(libraryUrl)
+                pom {
 
-                        licenses {
-                            license {
-                                name.set(licenseName)
-                                url.set(licenseUrl)
-                                distribution.set(licenseDistribution)
-                            }
+                    name.set(libraryName)
+                    description.set(libraryDescription)
+                    url.set(libraryUrl)
+
+                    licenses {
+                        license {
+                            name.set(licenseName)
+                            url.set(licenseUrl)
+                            distribution.set(licenseDistribution)
                         }
-                        developers {
-                            developer {
-                                id.set(developerId)
-                                name.set(developerName)
-                                email.set(developerEmail)
-                            }
-                        }
-                        scm { url.set(libraryUrl) }
                     }
+                    developers {
+                        developer {
+                            id.set(developerId)
+                            name.set(developerName)
+                            email.set(developerEmail)
+                        }
+                    }
+                    scm { url.set(libraryUrl) }
                 }
-            }
-
-            extensions.findByType<SigningExtension>()?.apply {
-                val publishing = extensions.findByType<PublishingExtension>() ?: return@apply
-                val key = System.getenv("GPG_KEY")?.toString()?.replace("\\n", "\n")
-                val password = System.getenv("GPG_PASSWORD")?.toString()
-
-                @Suppress("UnstableApiUsage")
-                useInMemoryPgpKeys(key, password)
-                sign(publishing.publications)
-            }
-
-            tasks.withType<Sign>().configureEach {
-                onlyIf { isReleaseBuild }
             }
         }
     }
