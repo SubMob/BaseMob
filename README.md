@@ -1,4 +1,4 @@
-# basemob
+# BaseMob
 
 [![master](https://github.com/SubMob/BaseMob/actions/workflows/master.yml/badge.svg)](https://github.com/SumMob/BaseMob/actions/workflows/master.yml)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.submob/basemob/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.submob/basemob)
@@ -6,7 +6,7 @@
 
 ## Install
 
-Multiplatform Settings is currently published to Maven Central, so add that to repositories.
+BaseMob is currently published to Maven Central, so add that to repositories.
 
 ```groovy
 repositories {
