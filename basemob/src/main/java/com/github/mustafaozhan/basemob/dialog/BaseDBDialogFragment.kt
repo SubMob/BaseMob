@@ -11,9 +11,11 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
 
 abstract class BaseDBDialogFragment<TDataBinding : ViewDataBinding> : DialogFragment() {
-    protected lateinit var binding: TDataBinding
+    private var _binding: TDataBinding? = null
+    protected val binding: TDataBinding
+        get() = _binding!!
 
-    abstract fun bind(container: ViewGroup?): TDataBinding
+    abstract fun getDataBinding(container: ViewGroup?): TDataBinding
     abstract fun onBinding(dataBinding: TDataBinding)
 
     override fun onCreateView(
@@ -21,9 +23,14 @@ abstract class BaseDBDialogFragment<TDataBinding : ViewDataBinding> : DialogFrag
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = bind(container)
-        binding.lifecycleOwner = viewLifecycleOwner
+        _binding = getDataBinding(container)
+        _binding?.lifecycleOwner = viewLifecycleOwner
         onBinding(binding)
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

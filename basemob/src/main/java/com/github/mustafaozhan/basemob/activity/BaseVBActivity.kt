@@ -8,13 +8,20 @@ import androidx.viewbinding.ViewBinding
 
 abstract class BaseVBActivity<TViewBinding : ViewBinding> : BaseActivity() {
 
-    protected lateinit var binding: TViewBinding
+    private var _binding: TViewBinding? = null
+    protected val binding: TViewBinding
+        get() = _binding!!
 
-    abstract fun bind()
+    abstract fun getViewBinding(): TViewBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bind()
+        _binding = getViewBinding()
         setContentView(binding.root)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

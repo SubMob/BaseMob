@@ -5,23 +5,30 @@ package com.github.mustafaozhan.basemob.bottomsheet
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseVBBottomSheetDialogFragment<TViewBinding : ViewBinding> : BaseBottomSheetDialogFragment() {
+abstract class BaseVBBottomSheetDialogFragment<TViewBinding : ViewBinding> :
+    BaseBottomSheetDialogFragment() {
 
-    protected lateinit var binding: TViewBinding
+    private var _binding: TViewBinding? = null
+    protected val binding: TViewBinding
+        get() = _binding!!
 
-    abstract fun bind()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        bind()
-    }
+    abstract fun getViewBinding(): TViewBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = binding.root
+    ): View {
+        _binding = getViewBinding()
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
