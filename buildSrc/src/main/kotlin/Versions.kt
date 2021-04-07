@@ -4,7 +4,7 @@
 
 object Versions {
     const val kotlin = "1.4.32"
-    const val androidPlugin = "7.0.0-alpha12"
+    const val androidPlugin = "7.0.0-alpha13"
     const val androidMaterial = "1.4.0-alpha01"
     const val navigation = "2.3.4"
 }
