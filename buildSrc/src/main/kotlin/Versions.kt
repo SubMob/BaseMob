@@ -3,8 +3,8 @@
  */
 
 object Versions {
-    const val kotlin = "1.5.0-RC"
-    const val androidPlugin = "7.0.0-alpha14"
-    const val androidMaterial = "1.4.0-alpha02"
+    const val kotlin = "1.5.0"
+    const val androidPlugin = "7.0.0-alpha15"
+    const val androidMaterial = "1.4.0-beta01"
     const val navigation = "2.3.5"
 }
