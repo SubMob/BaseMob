@@ -10,9 +10,9 @@ object ProjectSettings {
     private const val projectMayorVersion = 2
     private const val projectMinorVersion = 0
 
-    const val projectCompileSdkVersion = 29
-    const val projectMinSdkVersion = 21
-    const val projectTargetSdkVersion = 29
+    const val compileSdkVersion = 29
+    const val minSdkVersion = 21
+    const val targetSdkVersion = 29
 
     fun getVersionCode(project: Project) = gitCommitCount(project).let {
         if (it.isEmpty()) 1 else it.toInt()

@@ -12,14 +12,11 @@ plugins {
 
 android {
     with(ProjectSettings) {
-        compileSdkVersion(projectCompileSdkVersion)
+        compileSdk = compileSdkVersion
 
         defaultConfig {
-            minSdkVersion(projectMinSdkVersion)
-            targetSdkVersion(projectTargetSdkVersion)
-
-            versionCode = getVersionCode(project)
-            versionName = getVersionName(project)
+            minSdk = minSdkVersion
+            targetSdk = targetSdkVersion
         }
 
         buildFeatures {
@@ -44,7 +41,7 @@ tasks {
 
     register("androidSourcesJar", Jar::class) {
         archiveClassifier.set("sources")
-        from(android.sourceSets.getByName("main").java.srcDirs)
+        from(android.sourceSets.getByName("main").java.srcDirs())
     }
 }
 
@@ -121,7 +118,7 @@ val isReleaseBuild: Boolean
 
 object Library {
     const val libraryGroup = "com.github.submob"
-    const val libraryVersion = "2.0.1"
+    const val libraryVersion = "2.0.2"
 
     const val libraryUrl = "https://github.com/SubMob/BaseMob"
     const val libraryName = "BaseMob"
