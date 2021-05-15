@@ -41,7 +41,7 @@ tasks {
 
     register("androidSourcesJar", Jar::class) {
         archiveClassifier.set("sources")
-        from(android.sourceSets.getByName("main").java.srcDirs())
+        from(android.sourceSets.getByName("main").java.srcDirs().toString())
     }
 }
 
