@@ -18,13 +18,15 @@ object ProjectSettings {
         if (it.isEmpty()) 1 else it.toInt()
     }
 
-    fun getVersionName(project: Project) =
-        "$projectMayorVersion.$projectMinorVersion.${gitCommitCount(project)}"
+    fun getVersionName(
+        project: Project
+    ) = "$projectMayorVersion.$projectMinorVersion.${gitCommitCount(project)}"
 
-    private fun gitCommitCount(project: Project) =
-        "git rev-list --first-parent --count origin/master"
-            .executeCommand(project.rootDir)?.trim()
-            ?: ""
+    private fun gitCommitCount(
+        project: Project
+    ) = "git rev-list --first-parent --count origin/master"
+        .executeCommand(project.rootDir)?.trim()
+        ?: ""
 
     @Suppress("SpreadOperator", "MagicNumber")
     private fun String.executeCommand(workingDir: File): String? = try {

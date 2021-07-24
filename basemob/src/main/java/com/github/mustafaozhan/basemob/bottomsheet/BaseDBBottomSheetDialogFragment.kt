@@ -9,7 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 
-abstract class BaseDBBottomSheetDialogFragment<TDataBinding : ViewDataBinding> : BaseBottomSheetDialogFragment() {
+abstract class BaseDBBottomSheetDialogFragment<TDataBinding : ViewDataBinding> :
+    BaseBottomSheetDialogFragment() {
 
     private var _binding: TDataBinding? = null
     protected val binding: TDataBinding
