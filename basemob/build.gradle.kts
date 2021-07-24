@@ -3,8 +3,8 @@
  */
 plugins {
     with(Plugins) {
-        id(androidLibrary)
-        kotlin(android)
+        id(ANDROID_LIBRARY)
+        kotlin(ANDROID)
         `maven-publish`
         signing
     }
@@ -12,11 +12,11 @@ plugins {
 
 android {
     with(ProjectSettings) {
-        compileSdk = compileSdkVersion
+        compileSdk = COMPILE_SDK_VERSION
 
         defaultConfig {
-            minSdk = minSdkVersion
-            targetSdk = targetSdkVersion
+            minSdk = MIN_SDK_VERSION
+            targetSdk = TARGET_SDK_VERSION
         }
 
         buildFeatures {
@@ -28,8 +28,8 @@ android {
 
 dependencies {
     with(Dependencies.Android) {
-        implementation(navigation)
-        implementation(androidMaterial)
+        implementation(NAVIGATION)
+        implementation(ANDROID_MATERIAL)
     }
 }
 
@@ -118,7 +118,7 @@ val isReleaseBuild: Boolean
 
 object Library {
     const val libraryGroup = "com.github.submob"
-    const val libraryVersion = "2.0.2"
+    const val libraryVersion = "2.0.3"
 
     const val libraryUrl = "https://github.com/SubMob/BaseMob"
     const val libraryName = "BaseMob"

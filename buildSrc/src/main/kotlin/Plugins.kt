@@ -3,6 +3,6 @@
  */
 
 object Plugins {
-    const val androidLibrary = "com.android.library"
-    const val android = "android"
+    const val ANDROID_LIBRARY = "com.android.library"
+    const val ANDROID = "android"
 }

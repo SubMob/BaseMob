@@ -4,8 +4,8 @@
 
 object Dependencies {
     object Android {
-        const val androidMaterial =
-            "com.google.android.material:material:${Versions.androidMaterial}"
-        const val navigation = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+        const val ANDROID_MATERIAL =
+            "com.google.android.material:material:${Versions.ANDROID_MATERIAL}"
+        const val NAVIGATION = "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION}"
     }
 }
