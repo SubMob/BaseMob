@@ -4,7 +4,6 @@
 
 package com.github.mustafaozhan.basemob.bottomsheet
 
-import android.app.Dialog
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.fragment.app.DialogFragment
@@ -17,17 +16,18 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 
 abstract class BaseBottomSheetDialogFragment : AppCompatDialogFragment() {
 
-    private lateinit var bottomSheetDialog: BottomSheetDialog
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setStyle(DialogFragment.STYLE_NORMAL, R.style.BottomSheetDialogStyle)
     }
 
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val dialog = BottomSheetDialog(requireContext(), theme)
-        dialog.behavior.state = BottomSheetBehavior.STATE_EXPANDED
-        return dialog
+    override fun onCreateDialog(
+        savedInstanceState: Bundle?
+    ) = BottomSheetDialog(
+        requireContext(),
+        theme
+    ).apply {
+        behavior.state = BottomSheetBehavior.STATE_EXPANDED
     }
 
     protected fun dismissDialog() = findNavController().navigateUp()
