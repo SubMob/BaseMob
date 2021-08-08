@@ -1,6 +1,6 @@
 # BaseMob
 
-[![master](https://github.com/SubMob/BaseMob/actions/workflows/master.yml/badge.svg)](https://github.com/SumMob/BaseMob/actions/workflows/master.yml)
+[![BaseMob CI](https://github.com/SubMob/BaseMob/actions/workflows/main.yml/badge.svg)](https://github.com/SubMob/BaseMob/actions/workflows/main.yml)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.submob/basemob/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.submob/basemob)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/32600d90388a4f1bb55d45744ee49026)](https://www.codacy.com/gh/SubMob/BaseMob?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SubMob/BaseMob&amp;utm_campaign=Badge_Grade)
 
