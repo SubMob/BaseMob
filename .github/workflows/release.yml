@@ -1,10 +1,9 @@
-name: release
+name: Deployment
 
 on:
   push:
     branches:
-      - release
-  pull_request:
+      - master
 
 jobs:
   build:
