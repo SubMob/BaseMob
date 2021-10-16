@@ -4,7 +4,7 @@
 
 object Versions {
     const val KOTLIN = "1.5.31"
-    const val ANDROID_GRADLE_PLUGIN = "7.1.0-alpha13"
+    const val ANDROID_GRADLE_PLUGIN = "7.2.0-alpha01"
     const val ANDROID_MATERIAL = "1.4.0"
     const val NAVIGATION = "2.3.5"
 }
