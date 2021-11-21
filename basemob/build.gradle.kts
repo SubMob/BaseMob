@@ -2,7 +2,7 @@
  * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
 plugins {
-    with(Plugins) {
+    with(Dependencies.Plugins) {
         id(ANDROID_LIB)
         kotlin(ANDROID)
         `maven-publish`

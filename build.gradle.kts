@@ -8,7 +8,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        with(ClassPaths) {
+        with(Dependencies.ClassPaths) {
             classpath(ANDROID_GRADLE_PLUGIN)
             classpath(KOTLIN_GRADLE_PLUGIN)
         }

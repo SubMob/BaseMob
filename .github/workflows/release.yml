@@ -6,9 +6,9 @@ on:
       - master
 
 jobs:
-  build:
+  deploy:
 
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Clone Repo

@@ -8,4 +8,16 @@ object Dependencies {
             "com.google.android.material:material:${Versions.ANDROID_MATERIAL}"
         const val NAVIGATION = "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION}"
     }
+
+    object ClassPaths {
+        const val ANDROID_GRADLE_PLUGIN =
+            "com.android.tools.build:gradle:${Versions.ANDROID_GRADLE_PLUGIN}"
+        const val KOTLIN_GRADLE_PLUGIN =
+            "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}"
+    }
+
+    object Plugins {
+        const val ANDROID_LIB = "com.android.library"
+        const val ANDROID = "android"
+    }
 }
