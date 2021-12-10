@@ -8,21 +8,21 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class BaseDBRecyclerViewAdapter<T, TDataBinding : ViewDataBinding>(
+abstract class BaseDBRecyclerViewAdapter<T>(
     itemDiffer: DiffUtil.ItemCallback<T>
-) : ListAdapter<T, BaseDBRecyclerViewAdapter.BaseDBViewHolder<T, TDataBinding>>(itemDiffer) {
+) : ListAdapter<T, BaseDBRecyclerViewAdapter.BaseDBViewHolder<T>>(itemDiffer) {
     override fun onBindViewHolder(
-        holder: BaseDBViewHolder<T, TDataBinding>,
+        holder: BaseDBViewHolder<T>,
         position: Int
     ) = with(holder) {
         onItemBind(getItem(position))
         itemBinding.executePendingBindings()
     }
 
-    abstract class BaseDBViewHolder<out T, TDataBinding : ViewDataBinding>(
-        val itemBinding: TDataBinding
+    abstract class BaseDBViewHolder<in T>(
+        val itemBinding: ViewDataBinding
     ) : RecyclerView.ViewHolder(itemBinding.root) {
 
-        abstract fun onItemBind(item: @UnsafeVariance T)
+        abstract fun onItemBind(item: T)
     }
 }
