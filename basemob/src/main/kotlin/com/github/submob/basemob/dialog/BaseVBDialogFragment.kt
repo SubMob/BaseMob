@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.basemob.dialog
+package com.github.submob.basemob.dialog
 
 import android.os.Bundle
 import android.view.LayoutInflater

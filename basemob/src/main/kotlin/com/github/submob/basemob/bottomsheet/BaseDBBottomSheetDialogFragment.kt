@@ -1,29 +1,32 @@
 /*
  * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.basemob.bottomsheet
+package com.github.submob.basemob.bottomsheet
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.viewbinding.ViewBinding
+import androidx.databinding.ViewDataBinding
 
-abstract class BaseVBBottomSheetDialogFragment<TViewBinding : ViewBinding> :
+abstract class BaseDBBottomSheetDialogFragment<TDataBinding : ViewDataBinding> :
     BaseBottomSheetDialogFragment() {
 
-    private var _binding: TViewBinding? = null
-    protected val binding: TViewBinding
+    private var _binding: TDataBinding? = null
+    protected val binding: TDataBinding
         get() = _binding!!
 
-    abstract fun getViewBinding(): TViewBinding
+    abstract fun getDataBinding(container: ViewGroup?): TDataBinding
+    abstract fun onBinding(dataBinding: TDataBinding)
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = getViewBinding()
+        _binding = getDataBinding(container)
+        _binding?.lifecycleOwner = viewLifecycleOwner
+        onBinding(binding)
         return binding.root
     }
 

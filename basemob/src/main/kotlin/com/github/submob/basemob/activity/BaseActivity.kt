@@ -1,12 +1,12 @@
 /*
  * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.basemob.activity
+package com.github.submob.basemob.activity
 
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import com.github.mustafaozhan.basemob.R
+import com.github.submob.basemob.R
 
 @Suppress("unused")
 abstract class BaseActivity : AppCompatActivity() {
