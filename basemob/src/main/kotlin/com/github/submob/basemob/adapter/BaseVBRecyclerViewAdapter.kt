@@ -1,27 +1,27 @@
 /*
  * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.basemob.adapter
+package com.github.submob.basemob.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseVBRecyclerViewAdapter<T, TViewBinding : ViewBinding>(
+abstract class BaseVBRecyclerViewAdapter<T>(
     itemDiffer: DiffUtil.ItemCallback<T>
-) : ListAdapter<T, BaseVBRecyclerViewAdapter.BaseVBViewHolder<T, TViewBinding>>(itemDiffer) {
+) : ListAdapter<T, BaseVBRecyclerViewAdapter.BaseVBViewHolder<T>>(itemDiffer) {
     override fun onBindViewHolder(
-        holder: BaseVBViewHolder<T, TViewBinding>,
+        holder: BaseVBViewHolder<T>,
         position: Int
     ) = with(holder) {
         onItemBind(getItem(position))
     }
 
-    abstract class BaseVBViewHolder<out T, TViewBinding : ViewBinding>(
-        val itemBinding: TViewBinding
+    abstract class BaseVBViewHolder<in T>(
+        itemBinding: ViewBinding
     ) : RecyclerView.ViewHolder(itemBinding.root) {
 
-        abstract fun onItemBind(item: @UnsafeVariance T)
+        abstract fun onItemBind(item: T)
     }
 }

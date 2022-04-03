@@ -1,15 +1,15 @@
 /*
  * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.basemob.fragment
+package com.github.submob.basemob.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
-import com.github.mustafaozhan.basemob.R
-import com.github.mustafaozhan.basemob.activity.BaseActivity
+import com.github.submob.basemob.R
+import com.github.submob.basemob.activity.BaseActivity
 
 @Suppress("unused")
 abstract class BaseFragment : Fragment() {
