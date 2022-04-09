@@ -1,6 +1,9 @@
 /*
  * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
+import java.io.IOException
+import java.util.Properties
+
 plugins {
     with(Dependencies.Plugins) {
         id(ANDROID_LIB)
@@ -60,8 +63,8 @@ publishing {
                             maven {
                                 url = uri(if (isReleaseBuild) RELEASE_URL else SNAPSHOT_URL)
                                 credentials {
-                                    username = System.getenv("MAVEN_USERNAME")?.toString()
-                                    password = System.getenv("MAVEN_PASSWORD")?.toString()
+                                    username = getSecret("MAVEN_USERNAME")
+                                    password = getSecret("MAVEN_PASSWORD")
                                 }
                             }
                         }
@@ -70,8 +73,8 @@ publishing {
                     extensions.findByType<SigningExtension>()?.apply {
                         val publishing =
                             extensions.findByType<PublishingExtension>() ?: return@apply
-                        val key = System.getenv("GPG_KEY")?.toString()?.replace("\\n", "\n")
-                        val password = System.getenv("GPG_PASSWORD")?.toString()
+                        val key = getSecret("GPG_KEY").replace("\\n", "\n")
+                        val password = getSecret("GPG_PASSWORD")
 
                         @Suppress("UnstableApiUsage")
                         useInMemoryPgpKeys(key, password)
@@ -115,6 +118,24 @@ publishing {
 
 val isReleaseBuild: Boolean
     get() = System.getenv("GPG_KEY") != null
+
+fun getSecret(
+    key: String,
+    default: String = "secret" // these values can not be public
+): String = System.getenv(key).let {
+    if (it.isNullOrEmpty()) {
+        getSecretProperties()?.get(key)?.toString() ?: default
+    } else {
+        it
+    }
+}
+
+fun getSecretProperties() = try {
+    Properties().apply { load(file("$projectDir/key.properties").inputStream()) }
+} catch (e: IOException) {
+    logger.debug(e.message, e)
+    null
+}
 
 object Library {
     const val GROUP = "com.github.submob"
