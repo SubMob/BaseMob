@@ -14,6 +14,7 @@ import com.github.submob.basemob.R
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
+@Suppress("unused")
 abstract class BaseBottomSheetDialogFragment : AppCompatDialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +45,7 @@ abstract class BaseBottomSheetDialogFragment : AppCompatDialogFragment() {
                 ?.navOptions?.let { options ->
                     NavOptions.Builder()
                         .setLaunchSingleTop(options.shouldLaunchSingleTop())
-                        .setPopUpTo(options.popUpTo, options.isPopUpToInclusive)
+                        .setPopUpTo(options.popUpToId, options.isPopUpToInclusive())
                 } ?: NavOptions.Builder()
 
             if (animate) {
