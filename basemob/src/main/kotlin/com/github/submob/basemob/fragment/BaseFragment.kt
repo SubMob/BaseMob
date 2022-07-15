@@ -3,7 +3,6 @@
  */
 package com.github.submob.basemob.fragment
 
-import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
@@ -15,11 +14,6 @@ import com.github.submob.basemob.activity.BaseActivity
 abstract class BaseFragment : Fragment() {
 
     val fragmentTag: String = this.javaClass.simpleName
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
 
     protected fun getBaseActivity() = activity as? BaseActivity
 
@@ -35,7 +29,7 @@ abstract class BaseFragment : Fragment() {
                 ?.navOptions?.let { options ->
                     NavOptions.Builder()
                         .setLaunchSingleTop(options.shouldLaunchSingleTop())
-                        .setPopUpTo(options.popUpTo, options.isPopUpToInclusive)
+                        .setPopUpTo(options.popUpToId, options.isPopUpToInclusive())
                 } ?: NavOptions.Builder()
 
             if (animate) {
