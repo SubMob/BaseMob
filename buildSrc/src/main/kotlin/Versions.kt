@@ -8,5 +8,4 @@ object Versions {
     const val ANDROID_MATERIAL = "1.6.1"
     const val NAVIGATION = "2.5.2"
     const val DEPENDENCY_UPDATES = "0.42.0"
-    const val BUILD_HEALTH = "1.13.1"
 }

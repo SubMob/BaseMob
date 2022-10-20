@@ -4,10 +4,7 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 plugins {
-    with(Dependencies.Plugins) {
-        id(DEPENDENCY_UPDATES) version Versions.DEPENDENCY_UPDATES
-        id(BUILD_HEALTH) version Versions.BUILD_HEALTH
-    }
+    id(Dependencies.Plugins.DEPENDENCY_UPDATES) version Versions.DEPENDENCY_UPDATES
 }
 
 buildscript {
