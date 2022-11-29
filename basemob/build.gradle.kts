@@ -13,8 +13,10 @@ plugins {
     }
 }
 
+@Suppress("UnstableApiUsage")
 android {
     with(ProjectSettings) {
+        namespace = "com.github.submob.basemob"
         compileSdk = COMPILE_SDK_VERSION
 
         defaultConfig {
@@ -44,6 +46,7 @@ tasks {
 
     register("androidSourcesJar", Jar::class) {
         archiveClassifier.set("sources")
+        @Suppress("UnstableApiUsage")
         from(android.sourceSets.getByName("main").kotlin.srcDirs().toString())
     }
 }
@@ -76,7 +79,6 @@ publishing {
                         val key = getSecret("GPG_KEY").replace("\\n", "\n")
                         val password = getSecret("GPG_PASSWORD")
 
-                        @Suppress("UnstableApiUsage")
                         useInMemoryPgpKeys(key, password)
                         sign(publishing.publications)
                     }
