@@ -3,7 +3,7 @@
  */
 
 object Versions {
-    const val KOTLIN = "1.7.21"
+    const val KOTLIN = "1.7.22"
     const val ANDROID_GRADLE_PLUGIN = "7.3.1"
     const val ANDROID_MATERIAL = "1.7.0"
     const val NAVIGATION = "2.5.3"
