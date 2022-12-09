@@ -13,7 +13,7 @@ abstract class BaseDBFragment<TDataBinding : ViewDataBinding> : BaseFragment() {
 
     private var _binding: TDataBinding? = null
     protected val binding: TDataBinding
-        get() = _binding!!
+        get() = _binding as TDataBinding
 
     abstract fun getDataBinding(container: ViewGroup?): TDataBinding
     abstract fun onBinding(dataBinding: TDataBinding)

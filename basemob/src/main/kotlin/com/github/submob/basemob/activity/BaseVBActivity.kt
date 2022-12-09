@@ -10,7 +10,7 @@ abstract class BaseVBActivity<TViewBinding : ViewBinding> : BaseActivity() {
 
     private var _binding: TViewBinding? = null
     protected val binding: TViewBinding
-        get() = _binding!!
+        get() = _binding as TViewBinding
 
     abstract fun getViewBinding(): TViewBinding
 
