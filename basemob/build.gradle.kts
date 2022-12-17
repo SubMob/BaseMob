@@ -5,9 +5,9 @@ import java.io.IOException
 import java.util.Properties
 
 plugins {
-    with(Dependencies.Plugins) {
-        id(ANDROID_LIB)
-        kotlin(ANDROID)
+    with(libs.plugins) {
+        id(androidLib.get().pluginId)
+        id(android.get().pluginId)
         `maven-publish`
         signing
     }
@@ -32,9 +32,9 @@ android {
 }
 
 dependencies {
-    with(Dependencies.Android) {
-        implementation(NAVIGATION)
-        implementation(ANDROID_MATERIAL)
+    with(libs.android) {
+        implementation(navigation)
+        implementation(androidMaterial)
     }
 }
 
