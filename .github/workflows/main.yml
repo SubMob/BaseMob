@@ -31,7 +31,7 @@ jobs:
         if: success()
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-        uses: voxmedia/github-action-slack-notify-build@v1
+        uses: voxmedia/github-action-slack-notify-build@v2
         with:
           channel: submob
           status: SUCCESS
@@ -41,7 +41,7 @@ jobs:
         if: failure()
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-        uses: voxmedia/github-action-slack-notify-build@v1
+        uses: voxmedia/github-action-slack-notify-build@v2
         with:
           channel: submob
           status: FAILED
