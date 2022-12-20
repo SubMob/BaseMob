@@ -27,16 +27,6 @@ jobs:
       - name: Gradle Build
         run: ./gradlew build --parallel
 
-      - name: Notify slack success
-        if: success()
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-        uses: voxmedia/github-action-slack-notify-build@v2
-        with:
-          channel: submob
-          status: SUCCESS
-          color: good
-
       - name: Notify slack fail
         if: failure()
         env:
