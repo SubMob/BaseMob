@@ -4,6 +4,7 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 plugins {
+    @Suppress("DSL_SCOPE_VIOLATION")
     alias(libs.plugins.dependencyUpdates)
 }
 
