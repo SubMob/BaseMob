@@ -11,10 +11,7 @@ import com.github.submob.basemob.R
 import com.github.submob.basemob.activity.BaseActivity
 
 @Suppress("unused")
-abstract class BaseFragment : Fragment() {
-
-    val fragmentTag: String = this.javaClass.simpleName
-
+open class BaseFragment : Fragment() {
     protected fun getBaseActivity() = activity as? BaseActivity
 
     protected fun navigate(

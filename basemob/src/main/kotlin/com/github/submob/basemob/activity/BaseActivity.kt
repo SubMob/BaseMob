@@ -9,7 +9,7 @@ import androidx.navigation.findNavController
 import com.github.submob.basemob.R
 
 @Suppress("unused")
-abstract class BaseActivity : AppCompatActivity() {
+open class BaseActivity : AppCompatActivity() {
 
     @IdRes
     protected var containerId: Int = R.id.content

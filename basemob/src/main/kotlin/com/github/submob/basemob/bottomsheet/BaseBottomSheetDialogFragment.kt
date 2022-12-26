@@ -15,7 +15,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 @Suppress("unused")
-abstract class BaseBottomSheetDialogFragment : AppCompatDialogFragment() {
+open class BaseBottomSheetDialogFragment : AppCompatDialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
