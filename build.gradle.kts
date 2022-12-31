@@ -14,7 +14,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        with(libs.classpaths) {
+        libs.classpaths.apply {
             classpath(androidGradlePlugin)
             classpath(kotlinGradlePlugin)
         }

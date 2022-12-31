@@ -6,7 +6,7 @@ import java.util.Properties
 
 plugins {
     @Suppress("DSL_SCOPE_VIOLATION")
-    with(libs.plugins) {
+    libs.plugins.apply {
         id(androidLib.get().pluginId)
         id(android.get().pluginId)
         `maven-publish`
@@ -16,7 +16,7 @@ plugins {
 
 @Suppress("UnstableApiUsage")
 android {
-    with(ProjectSettings) {
+    ProjectSettings.apply {
         namespace = "com.github.submob.basemob"
         compileSdk = COMPILE_SDK_VERSION
 
@@ -33,7 +33,7 @@ android {
 }
 
 dependencies {
-    with(libs.android) {
+    libs.android.apply {
         implementation(navigation)
         implementation(androidMaterial)
     }
@@ -55,7 +55,7 @@ tasks {
 publishing {
     publications {
         register<MavenPublication>("mavenAndroid") {
-            with(Library) {
+            Library.apply {
                 group = GROUP
                 version = ProjectSettings.getVersionName(project)
 
