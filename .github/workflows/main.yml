@@ -22,11 +22,10 @@ jobs:
           java-version: 11
           distribution: 'temurin'
 
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
-
       - name: Gradle Build
-        run: ./gradlew build --parallel
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build
 
       - name: Notify slack fail
         if: failure()
