@@ -4,7 +4,6 @@ kotlin = "1.7.22"
 androidGradlePlugin = "7.3.1"
 androidMaterial = "1.7.0"
 navigation = "2.5.3"
-dependencyUpdates = "0.44.0"
 
 [libraries]
 # ANDROID
@@ -19,4 +18,3 @@ classpaths-kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-p
 
 android = { id = "org.jetbrains.kotlin.android" }
 androidLib = { id = "com.android.library" }
-dependencyUpdates = { id = "com.github.ben-manes.versions", version.ref = "dependencyUpdates" }
