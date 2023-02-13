@@ -16,19 +16,12 @@ plugins {
 
 @Suppress("UnstableApiUsage")
 android {
-    ProjectSettings.apply {
-        namespace = "com.github.submob.basemob"
-        compileSdk = COMPILE_SDK_VERSION
+    namespace = "com.github.submob.basemob"
+    compileSdk = ProjectSettings.COMPILE_SDK_VERSION
 
-        defaultConfig {
-            minSdk = MIN_SDK_VERSION
-            targetSdk = TARGET_SDK_VERSION
-        }
-
-        buildFeatures {
-            viewBinding = true
-            dataBinding = true
-        }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
     }
 }
 
