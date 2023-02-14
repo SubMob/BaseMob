@@ -1,6 +1,7 @@
 /*
  * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
+import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import java.io.ByteArrayOutputStream
 
@@ -14,6 +15,8 @@ object ProjectSettings {
 
     // git rev-list --first-parent --count master +1
     private const val VERSION_DIF = 156
+
+    val JAVA_VERSION = JavaVersion.VERSION_11
 
     fun getVersionName(
         project: Project
