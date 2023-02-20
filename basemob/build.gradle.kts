@@ -14,7 +14,6 @@ plugins {
     }
 }
 
-@Suppress("UnstableApiUsage")
 android {
     ProjectSettings.apply {
         namespace = "com.github.submob.basemob"
@@ -27,6 +26,7 @@ android {
         }
     }
 
+    @Suppress("UnstableApiUsage")
     buildFeatures {
         viewBinding = true
         dataBinding = true
