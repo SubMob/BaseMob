@@ -16,7 +16,7 @@ object ProjectSettings {
     // git rev-list --first-parent --count master +1
     private const val VERSION_DIF = 156
 
-    val JAVA_VERSION = JavaVersion.VERSION_11
+    val JAVA_VERSION = JavaVersion.VERSION_17
 
     fun getVersionName(
         project: Project
