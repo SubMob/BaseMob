@@ -19,4 +19,10 @@ allprojects {
         google()
         mavenCentral()
     }
+
+    tasks.withType<KotlinCompile> {
+        kotlinOptions {
+            allWarningsAsErrors = true
+        }
+    }
 }
