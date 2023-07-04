@@ -1,6 +1,8 @@
 /*
  * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 buildscript {
     repositories {
         google()
