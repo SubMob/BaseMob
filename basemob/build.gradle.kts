@@ -5,7 +5,6 @@ import java.io.IOException
 import java.util.Properties
 
 plugins {
-    @Suppress("DSL_SCOPE_VIOLATION")
     libs.plugins.apply {
         id(androidLib.get().pluginId)
         id(android.get().pluginId)
