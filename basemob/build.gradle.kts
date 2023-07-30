@@ -25,7 +25,6 @@ android {
         }
     }
 
-    @Suppress("UnstableApiUsage")
     buildFeatures {
         viewBinding = true
         dataBinding = true
@@ -47,7 +46,6 @@ tasks {
 
     register("androidSourcesJar", Jar::class) {
         archiveClassifier.set("sources")
-        @Suppress("UnstableApiUsage")
         from(android.sourceSets.getByName("main").kotlin.srcDirs().toString())
     }
 }
