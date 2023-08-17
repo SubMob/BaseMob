@@ -17,6 +17,7 @@ android {
     ProjectSettings.apply {
         namespace = "com.github.submob.basemob"
         compileSdk = COMPILE_SDK_VERSION
+        defaultConfig.minSdk = MIN_SDK_VERSION
 
         compileOptions {
             sourceCompatibility = JAVA_VERSION
