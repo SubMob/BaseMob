@@ -7,8 +7,6 @@ import java.io.ByteArrayOutputStream
 
 object ProjectSettings {
     const val COMPILE_SDK_VERSION = 31
-    const val MIN_SDK_VERSION = 14
-    const val TARGET_SDK_VERSION = 31
 
     private const val MAYOR_VERSION = 2
     private const val MINOR_VERSION = 1
