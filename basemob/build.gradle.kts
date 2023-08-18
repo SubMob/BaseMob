@@ -41,7 +41,7 @@ dependencies {
 tasks {
     register("androidJavadocJar", Jar::class) {
         archiveClassifier.set("javadoc")
-        from("$buildDir/javadoc")
+        from("${layout.buildDirectory}/javadoc")
     }
 
     register("androidSourcesJar", Jar::class) {
