@@ -6,7 +6,7 @@ import org.gradle.api.Project
 import java.io.ByteArrayOutputStream
 
 object ProjectSettings {
-    const val COMPILE_SDK_VERSION = 31
+    const val COMPILE_SDK_VERSION = 34
     const val MIN_SDK_VERSION = 3
 
     private const val MAYOR_VERSION = 2
