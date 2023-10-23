@@ -3,6 +3,10 @@
  */
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+plugins {
+    alias(libs.plugins.kotlinAndroid).apply(false)
+}
+
 buildscript {
     repositories {
         google()

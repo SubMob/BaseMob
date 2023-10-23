@@ -16,5 +16,5 @@ classpaths-kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-p
 
 [plugins]
 
-android = { id = "org.jetbrains.kotlin.android" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidLib = { id = "com.android.library" }

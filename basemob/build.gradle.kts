@@ -7,7 +7,7 @@ import java.util.Properties
 plugins {
     libs.plugins.apply {
         id(androidLib.get().pluginId)
-        id(android.get().pluginId)
+        alias(kotlinAndroid)
         `maven-publish`
         signing
     }
