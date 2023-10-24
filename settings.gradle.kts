@@ -3,3 +3,10 @@
  */
 rootProject.name = "BaseMob"
 include(":basemob")
+
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+    }
+}
