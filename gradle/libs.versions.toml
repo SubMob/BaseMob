@@ -10,9 +10,6 @@ navigation = "2.7.4"
 android-androidMaterial = { module = "com.google.android.material:material", version.ref = "androidMaterial" }
 android-navigation = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
 
-# CLASSPATHS
-classpaths-kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-
 [plugins]
 
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

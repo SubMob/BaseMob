@@ -10,18 +10,6 @@ plugins {
     }
 }
 
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        libs.classpaths.apply {
-            classpath(kotlinGradlePlugin)
-        }
-    }
-}
-
 allprojects {
     repositories {
         google()
