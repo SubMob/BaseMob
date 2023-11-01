@@ -3,7 +3,7 @@
 kotlin = "1.9.10"
 androidGradlePlugin = "8.1.2"
 androidMaterial = "1.10.0"
-navigation = "2.7.4"
+navigation = "2.7.5"
 
 [libraries]
 # ANDROID
