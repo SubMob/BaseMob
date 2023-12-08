@@ -1,6 +1,6 @@
 [versions]
 
-kotlin = "1.9.20"
+kotlin = "1.9.21"
 androidGradlePlugin = "8.1.4"
 androidMaterial = "1.10.0"
 navigation = "2.7.5"
