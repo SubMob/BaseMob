@@ -1,9 +1,6 @@
 /*
  Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-rootProject.name = "BaseMob"
-include(":basemob")
-
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -26,5 +23,23 @@ gradleEnterprise {
             hostname { null }
             ipAddresses { null }
         }
+    }
+}
+
+include(":basemob")
+
+rootProject.name = "BaseMob"
+rootProject.updateBuildFileNames()
+
+fun ProjectDescriptor.updateBuildFileNames() {
+    buildFileName = path
+        .drop(1)
+        .replace(":", "-")
+        .dropLastWhile { it != '-' }
+        .plus(name)
+        .plus(".gradle.kts")
+
+    if (children.isNotEmpty()) {
+        children.forEach { it.updateBuildFileNames() }
     }
 }
