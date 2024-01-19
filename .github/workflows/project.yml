@@ -17,3 +17,5 @@ jobs:
     uses: Oztechan/Global/.github/workflows/reusable-project-submodules.yml@a3db254980b0b8f7931b1f591676a3a9473bfcfb
     with:
       project_id: 1
+    secrets:
+      PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
