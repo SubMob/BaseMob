@@ -17,7 +17,7 @@ allprojects {
     }
 
     tasks.withType<KotlinCompile> {
-        kotlinOptions {
+        compilerOptions {
             allWarningsAsErrors = true
         }
     }
