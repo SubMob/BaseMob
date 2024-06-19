@@ -3,7 +3,6 @@
  */
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
-import java.io.ByteArrayOutputStream
 
 object ProjectSettings {
     const val COMPILE_SDK_VERSION = 34
@@ -21,12 +20,8 @@ object ProjectSettings {
         project: Project
     ) = "$MAYOR_VERSION.$MINOR_VERSION.${gitCommitCount(project).toInt() - VERSION_DIF}"
 
-    private fun gitCommitCount(project: Project): String {
-        val os = ByteArrayOutputStream()
-        project.exec {
-            commandLine = "git rev-list --first-parent --count HEAD".split(" ")
-            standardOutput = os
-        }
-        return String(os.toByteArray()).trim()
-    }
+    @Suppress("UnstableApiUsage")
+    private fun gitCommitCount(project: Project): String = project.providers.exec {
+        commandLine("git rev-list --first-parent --count HEAD".split(" "))
+    }.standardOutput.asText.get().trim()
 }
