@@ -11,6 +11,8 @@ plugins {
 }
 
 allprojects {
+    project.dependencyLocking.lockAllConfigurations()
+
     repositories {
         google()
         mavenCentral()
@@ -20,5 +22,11 @@ allprojects {
         compilerOptions {
             allWarningsAsErrors = true
         }
+    }
+}
+
+tasks.findByName("dependencies")?.let {
+    allprojects.forEach { prj ->
+        if (prj != rootProject) it.dependsOn("${prj.path}:dependencies")
     }
 }
