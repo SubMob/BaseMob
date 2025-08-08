@@ -6,7 +6,6 @@ package com.github.submob.basemob.bottomsheet
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDialogFragment
-import androidx.fragment.app.DialogFragment
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
@@ -19,7 +18,7 @@ open class BaseBottomSheetDialogFragment : AppCompatDialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(DialogFragment.STYLE_NORMAL, R.style.BottomSheetDialogStyle)
+        setStyle(STYLE_NORMAL, R.style.BottomSheetDialogStyle)
     }
 
     override fun onCreateDialog(
