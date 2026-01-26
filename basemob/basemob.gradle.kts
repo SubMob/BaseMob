@@ -7,7 +7,6 @@ import java.util.Properties
 plugins {
     libs.plugins.apply {
         alias(androidLibrary)
-        alias(kotlinAndroid)
         `maven-publish`
         signing
     }
@@ -46,7 +45,7 @@ tasks {
 
     register("androidSourcesJar", Jar::class) {
         archiveClassifier.set("sources")
-        from(android.sourceSets.getByName("main").kotlin.srcDirs().toString())
+        from(android.sourceSets.getByName("main").kotlin.directories.toString())
     }
 }
 
