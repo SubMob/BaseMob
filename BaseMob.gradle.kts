@@ -4,10 +4,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    libs.plugins.apply {
-        alias(kotlinAndroid).apply(false)
-        alias(androidLibrary).apply(false)
-    }
+    alias(libs.plugins.androidLibrary).apply(false)
 }
 
 allprojects {
