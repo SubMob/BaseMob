@@ -1,7 +1,7 @@
 [versions]
 
 kotlin = "2.3.10"
-androidGradlePlugin = "8.13.2"
+androidGradlePlugin = "9.0.1"
 androidMaterial = "1.13.0"
 navigation = "2.9.6"
 
@@ -12,5 +12,4 @@ android-navigation = { module = "androidx.navigation:navigation-fragment-ktx", v
 
 [plugins]
 
-kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "androidGradlePlugin" }
