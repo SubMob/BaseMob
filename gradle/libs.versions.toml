@@ -2,7 +2,7 @@
 
 androidGradlePlugin = "9.0.1"
 androidMaterial = "1.13.0"
-navigation = "2.9.6"
+navigation = "2.9.7"
 
 [libraries]
 # ANDROID
