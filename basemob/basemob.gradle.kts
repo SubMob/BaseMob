@@ -45,7 +45,7 @@ tasks {
 
     register("androidSourcesJar", Jar::class) {
         archiveClassifier.set("sources")
-        from(android.sourceSets.getByName("main").kotlin.directories.toString())
+        from("src/main/kotlin", "src/main/java")
     }
 }
 
