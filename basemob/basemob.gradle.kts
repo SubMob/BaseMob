@@ -42,5 +42,8 @@ mavenPublishing {
     // keys are provided in CI via ORG_GRADLE_PROJECT_* env.
     @Suppress("DEPRECATION")
     configure(AndroidSingleVariantLibrary(variant = "release", sourcesJar = true, publishJavadocJar = true))
-    signAllPublications()
+    // Sign releases only — snapshots aren't signed on Central Portal.
+    if (!version.toString().endsWith("SNAPSHOT")) {
+        signAllPublications()
+    }
 }
