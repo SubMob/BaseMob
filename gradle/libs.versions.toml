@@ -3,6 +3,7 @@
 androidGradlePlugin = "9.2.1"
 androidMaterial = "1.14.0"
 navigation = "2.9.8"
+mavenPublish = "0.37.0"
 
 [libraries]
 # ANDROID
@@ -12,3 +13,4 @@ android-navigation = { module = "androidx.navigation:navigation-fragment-ktx", v
 [plugins]
 
 androidLibrary = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
