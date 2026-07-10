@@ -1,7 +1,6 @@
 /*
  * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-@file:Suppress("DEPRECATION") // vanniktech AndroidSingleVariantLibrary(Boolean, Boolean) ctor — still valid
 
 import com.vanniktech.maven.publish.AndroidSingleVariantLibrary
 
@@ -41,6 +40,7 @@ mavenPublishing {
     // Coordinates (GROUP + POM_ARTIFACT_ID), POM, host and auto-release come from gradle.properties.
     // Publishes the release AAR + sources + javadoc. Central Portal requires signed artifacts;
     // keys are provided in CI via ORG_GRADLE_PROJECT_* env.
+    @Suppress("DEPRECATION")
     configure(AndroidSingleVariantLibrary(variant = "release", sourcesJar = true, publishJavadocJar = true))
     signAllPublications()
 }
