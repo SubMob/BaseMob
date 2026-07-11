@@ -1,14 +1,14 @@
 name: BaseMob CI
 
 on:
+  pull_request:
   push:
     branches:
       - develop
-      - 'submodule/CCC'
-  pull_request:
+      - master
 
 jobs:
-  build:
+  ci:
 
     runs-on: ubuntu-24.04
 
@@ -18,6 +18,31 @@ jobs:
 
       - name: Gradle Build
         run: ./gradlew build
+
+      # Publish only on a merge to develop/master, and only after the build above passes.
+      # develop -> X.Y-SNAPSHOT (unsigned), master -> X.Y.Z release (signed).
+      - name: Publish
+        if: github.event_name == 'push'
+        # Normalize the armored GPG key: literal "\n" -> real newlines (vanniktech's
+        # signingInMemoryKey needs real newlines); a correct key passes through unchanged.
+        run: |
+          export ORG_GRADLE_PROJECT_signingInMemoryKey="$(printf '%b' "$GPG_KEY_RAW")"
+          ./gradlew publishToMavenCentral --no-configuration-cache
+        env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_USERNAME }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_PASSWORD }}
+          GPG_KEY_RAW: ${{ secrets.GPG_KEY }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_PASSWORD }}
+
+      - name: Notify slack success
+        if: success() && github.event_name == 'push'
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v2
+        with:
+          channel: submob
+          status: SUCCESS
+          color: good
 
       - name: Notify slack fail
         if: failure()
