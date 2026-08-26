@@ -1,6 +1,6 @@
 [versions]
 
-androidGradlePlugin = "9.3.1"
+androidGradlePlugin = "9.3.2"
 androidMaterial = "1.14.0"
 navigation = "2.9.8"
 mavenPublish = "0.37.0"
