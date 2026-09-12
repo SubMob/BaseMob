@@ -5,12 +5,14 @@ on:
   push:
     branches:
       - develop
-      - master
 
 jobs:
   ci:
 
     runs-on: ubuntu-24.04
+
+    permissions:
+      contents: write # create the release tag
 
     steps:
       - name: Setup Gradle Repo
@@ -19,8 +21,8 @@ jobs:
       - name: Gradle Build
         run: ./gradlew build
 
-      # Publish only on a merge to develop/master, and only after the build above passes.
-      # develop -> X.Y-SNAPSHOT (unsigned), master -> X.Y.Z release (signed).
+      # develop is the release branch: every merge publishes an immutable, signed X.Y.Z to Maven
+      # Central, once the build above passes. Every other branch builds X.Y-SNAPSHOT and never publishes.
       - name: Publish
         if: github.event_name == 'push'
         # Normalize the armored GPG key: literal "\n" -> real newlines (vanniktech's
@@ -33,6 +35,23 @@ jobs:
           ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_PASSWORD }}
           GPG_KEY_RAW: ${{ secrets.GPG_KEY }}
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_PASSWORD }}
+
+      # Read back from Gradle so the tag always matches the version just published to Maven Central.
+      - name: Resolve version
+        id: version
+        if: github.event_name == 'push'
+        run: echo "version=$(./gradlew -q printVersion | grep '^VERSION_NAME=' | cut -d= -f2)" >> $GITHUB_OUTPUT
+
+      # Tags the released commit and cuts the matching GitHub release. Done inline rather than from a
+      # tag-triggered workflow, because tags pushed with GITHUB_TOKEN never trigger other workflows —
+      # which is also why automatic_release_tag is set: with no tag ref the action has nothing to cut.
+      - name: PublishRelease
+        if: github.event_name == 'push'
+        uses: marvinpinto/action-automatic-releases@v1.2.1
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          prerelease: false
+          automatic_release_tag: v${{ steps.version.outputs.version }}
 
       - name: Notify slack success
         if: success() && github.event_name == 'push'
